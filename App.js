@@ -1,12 +1,64 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
+
+import HomePage from './HomePage';
+// Import other screens here
+
+const Stack = createStackNavigator();
+const BottomTab = createBottomTabNavigator();
+
+function BottomTabNavigator() {
+  return (
+    <BottomTab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'More') {
+            iconName = focused ? 'ios-menu' : 'ios-menu-outline';
+          } else if (route.name === 'Recognizer') {
+            iconName = focused ? 'ios-search' : 'ios-search-outline';
+          } else if (route.name === 'Map') {
+            iconName = focused ? 'ios-map' : 'ios-map-outline';
+          } else if (route.name === 'Search') {
+            iconName = focused ? 'ios-search' : 'ios-search-outline';
+          } else if (route.name === 'Favorite') {
+            iconName = focused ? 'ios-heart' : 'ios-heart-outline';
+          }
+
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: 'tomato',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <BottomTab.Screen name="More" component={HomePage} />
+      {/* Add other screens for Recognizer, Map, Search, and Favorite here */}
+    </BottomTab.Navigator>
+  );
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="HomePage"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="HomePage" component={BottomTabNavigator} />
+        {/* Add other screens here */}
+      </Stack.Navigator>
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
 
@@ -18,5 +70,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
