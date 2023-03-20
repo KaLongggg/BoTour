@@ -47,6 +47,7 @@ function BottomTabNavigator() {
 
 export default function App() {
   return (
+<<<<<<< HEAD
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="HomePage"
@@ -57,6 +58,10 @@ export default function App() {
         <Stack.Screen name="HomePage" component={BottomTabNavigator} />
         {/* Add other screens here */}
       </Stack.Navigator>
+=======
+    <View style={styles.container}>
+      <Text>Hi Group 24</Text>
+>>>>>>> 4b49c608dc1c5f7ef2e722f825dea349e818205e
       <StatusBar style="auto" />
     </NavigationContainer>
   );
