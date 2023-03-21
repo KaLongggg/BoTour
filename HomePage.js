@@ -4,12 +4,14 @@ import Carousel from 'react-native-snap-carousel';
 
 const images = [
   {
-    source: require('./assets/image1_HomePage.png'),
+    source: require('./assets/image1_HomePage.jpeg'),
   },
   {
-    source: require('./assets/image2_HomePage.png'),
+    source: require('./assets/image2_HomePage.jpg'),
   },
-  // Add more images and corresponding screens here
+  {
+    source: require('./assets/image3_HomePage.jpg'),
+  },
 ];
 
 export default class HomePage extends Component {
@@ -19,13 +21,10 @@ export default class HomePage extends Component {
 
   _renderItem({ item, index }) {
     return (
-      <TouchableOpacity
-        style={styles.carouselItem}
-        onPress={() => this.props.navigation.navigate(item.screen)}
-      >
+      <View style={styles.carouselItem}>
         <Image source={item.source} style={styles.carouselImage} />
         <Text style={styles.carouselTitle}>{item.title}</Text>
-      </TouchableOpacity>
+      </View>
     );
   }
 
@@ -57,9 +56,10 @@ const styles = StyleSheet.create({
   },
   carouselItem: {
     backgroundColor: 'white',
-    borderRadius: 5,
+    borderRadius: 15,
     height: Dimensions.get('window').height * 0.3,
-    padding: 10,
+    paddingTop: 10,
+    padding: 0,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -67,6 +67,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
-    borderRadius: 5,
+    borderRadius: 15,
   },
 });

@@ -1,9 +1,10 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text} from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Ionicons } from '@expo/vector-icons';
 
 // Import screens here
@@ -12,15 +13,23 @@ import RecognizerScreen from './RecognizerScreen';
 import MapScreen from './MapScreen';
 import SearchScreen from './SearchScreen';
 import FavoriteScreen from './FavoriteScreen';
+import SideMenu from './SideMenu';
+import WhatsOnScreen from './WhatsOnScreen';
+import MyJournalScreen from './MyJournalScreen';
+import ToursScreen from './ToursScreen';
+import DiscoverScreen from './DiscoverScreen';
+import GettingHereScreen from './GettingHereScreen';
+import AboutScreen from './AboutScreen';
 
-
-const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
 
 function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       screenOptions={({ route }) => ({
+        headerShown: false,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
@@ -51,27 +60,46 @@ function BottomTabNavigator() {
       <BottomTab.Screen name="Map" component={MapScreen} />
       <BottomTab.Screen name="Search" component={SearchScreen} />
       <BottomTab.Screen name="Favorite" component={FavoriteScreen} />
-
     </BottomTab.Navigator>
   );
 }
+
+function MainStackNavigator() {
+  return (
+    <Stack.Navigator 
+      initialRouteName="Home"
+      screenOptions={{
+      headerShown: false,
+      }}
+    >
+      
+      <Stack.Screen name="Home" component={BottomTabNavigator} />
+      <Stack.Screen name="What's On?" component={WhatsOnScreen} />
+      <Stack.Screen name="My Journal" component={MyJournalScreen} />
+      <Stack.Screen name="Tours" component={ToursScreen} />
+      <Stack.Screen name="Discover" component={DiscoverScreen} />
+      <Stack.Screen name="Getting Here" component={GettingHereScreen} />
+      <Stack.Screen name="About" component={AboutScreen} />
+    </Stack.Navigator>
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="HomePage"
-        screenOptions={{
-          headerShown: false,
-        }}
+      <Drawer.Navigator
+        initialRouteName="Main"
+        drawerContent={(props) => <SideMenu {...props} />}
+        screenOptions={({ route }) => ({
+          headerTitle: route.name,
+        })}
       >
-        <Stack.Screen name="HomePage" component={BottomTabNavigator} />
-        {/* Add other screens here */}
-      </Stack.Navigator>
+        <Drawer.Screen name="BoTour" component={MainStackNavigator} />
+      </Drawer.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
