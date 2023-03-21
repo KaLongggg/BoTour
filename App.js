@@ -1,13 +1,18 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
+// Import screens here
 import HomePage from './HomePage';
-// Import other screens here
+import RecognizerScreen from './RecognizerScreen';
+import MapScreen from './MapScreen';
+import SearchScreen from './SearchScreen';
+import FavoriteScreen from './FavoriteScreen';
+
 
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -19,8 +24,8 @@ function BottomTabNavigator() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === 'More') {
-            iconName = focused ? 'ios-menu' : 'ios-menu-outline';
+          if (route.name === 'Home') {
+            iconName = focused ? 'ios-home' : 'ios-home-outline';
           } else if (route.name === 'Recognizer') {
             iconName = focused ? 'ios-search' : 'ios-search-outline';
           } else if (route.name === 'Map') {
@@ -33,18 +38,23 @@ function BottomTabNavigator() {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-      })}
-      tabBarOptions={{
-        activeTintColor: 'tomato',
+        tabBarLabel: ({ focused, color }) => {
+          return <Text style={{ color: focused ? 'blue' : 'gray' }}>{route.name}</Text>;
+        },
+        tabBarVisible: true,
+        activeTintColor: 'blue',
         inactiveTintColor: 'gray',
-      }}
+      })}
     >
-      <BottomTab.Screen name="More" component={HomePage} />
-      {/* Add other screens for Recognizer, Map, Search, and Favorite here */}
+      <BottomTab.Screen name="Home" component={HomePage} />
+      <BottomTab.Screen name="Recognizer" component={RecognizerScreen} />
+      <BottomTab.Screen name="Map" component={MapScreen} />
+      <BottomTab.Screen name="Search" component={SearchScreen} />
+      <BottomTab.Screen name="Favorite" component={FavoriteScreen} />
+
     </BottomTab.Navigator>
   );
 }
-
 export default function App() {
   return (
     <NavigationContainer>
@@ -61,6 +71,7 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {

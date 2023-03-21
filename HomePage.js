@@ -5,13 +5,9 @@ import Carousel from 'react-native-snap-carousel';
 const images = [
   {
     source: require('./assets/image1_HomePage.png'),
-    title: 'News',
-    screen: 'NewsScreen'
   },
   {
     source: require('./assets/image2_HomePage.png'),
-    title: 'Collections & Conservation',
-    screen: 'CollectionsScreen'
   },
   // Add more images and corresponding screens here
 ];
@@ -62,20 +58,15 @@ const styles = StyleSheet.create({
   carouselItem: {
     backgroundColor: 'white',
     borderRadius: 5,
-    height: '80%',
+    height: Dimensions.get('window').height * 0.3,
     padding: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },
   carouselImage: {
     width: '100%',
-    height: '80%',
+    height: '100%',
     resizeMode: 'cover',
     borderRadius: 5,
-  },
-  carouselTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 10,
   },
 });
