@@ -18,7 +18,7 @@ import WhatsOnScreen from './WhatsOnScreen';
 import MyJournalScreen from './MyJournalScreen';
 import ToursScreen from './ToursScreen';
 import DiscoverScreen from './DiscoverScreen';
-import GettingHereScreen from './GettingHereScreen';
+import HoursandLocationScreen from './HoursandLocationScreen';
 import AboutScreen from './AboutScreen';
 
 const BottomTab = createBottomTabNavigator();
@@ -67,18 +67,18 @@ function BottomTabNavigator() {
 function MainStackNavigator() {
   return (
     <Stack.Navigator 
-      initialRouteName="Home"
+      initialRouteName="Main"
       screenOptions={{
       headerShown: false,
       }}
     >
       
-      <Stack.Screen name="Home" component={BottomTabNavigator} />
+      <Stack.Screen name="Main" component={BottomTabNavigator} />
       <Stack.Screen name="What's On?" component={WhatsOnScreen} />
       <Stack.Screen name="My Journal" component={MyJournalScreen} />
       <Stack.Screen name="Tours" component={ToursScreen} />
       <Stack.Screen name="Discover" component={DiscoverScreen} />
-      <Stack.Screen name="Getting Here" component={GettingHereScreen} />
+      <Stack.Screen name="Hours and Location" component={HoursandLocationScreen} />
       <Stack.Screen name="About" component={AboutScreen} />
     </Stack.Navigator>
   );

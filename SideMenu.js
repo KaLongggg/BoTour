@@ -45,8 +45,8 @@ function SideMenu(props) {
         icon={({ color, size }) => (
           <Ionicons name="navigate" size={size} color={color} />
         )}
-        label="Getting Here"
-        onPress={() => props.navigation.navigate('Getting Here')}
+        label="Hours and Location"
+        onPress={() => props.navigation.navigate('Hours and Location')}
       />
         <DrawerItem
         icon={({ color, size }) => (
