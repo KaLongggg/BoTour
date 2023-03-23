@@ -140,9 +140,22 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height * 0.3,
     paddingTop: 10,
     padding: 0,
-    justifyContent: 'top',
-    alignItems: 'center',
+    justifyContent: 'center',
+  //   alignItems: 'center',
   },
+
+
+
+
+  // carouselItem: {
+  //   backgroundColor: 'Grey',
+  //   borderRadius: 15,
+  //   height: Dimensions.get('window').height * 0.3,
+  //   paddingTop: 10,
+  //   padding: 0,
+  //   justifyContent: 'top',
+  //   alignItems: 'center',
+  // },
   carouselImage: {
     width: '100%',
     height: '90%',

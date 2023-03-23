@@ -73,7 +73,8 @@ function SideMenu(props) {
             <MaterialCommunityIcons name="youtube" size={size} color={color} />
           )}
           label="YouTube"
-          onPress={() => Linking.openURL('https://www.youtube.com/channel/UCe0yl5iYHl5VqNogb6fN9QQ')}
+          onPress={() => 
+            Linking.openURL('https://www.youtube.com/channel/UCe0yl5iYHl5VqNogb6fN9QQ')}
         />
         <DrawerItem
         icon={({ color, size }) => (
