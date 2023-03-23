@@ -4,24 +4,24 @@ import Carousel from 'react-native-snap-carousel';
 
 const gridImages = [
   {
-    title: 'Collection',
+    // title: 'Collection',
     source: require('./assets/HomePage/Collection.jpg'),
     onPress: (navigation) => navigation.navigate('Collection')
       // Handle navigation to the corresponding page
   },
   {
-    title: 'Tours',
+    // title: 'Tours',
     source: require('./assets/HomePage/Tours.jpg'),
     onPress: (navigation) => navigation.navigate('Tours'),
   },
   
   {
-    title: "What's on",
+    // title: "What's on",
     source: require('./assets/HomePage/Whatson.jpg'),
     onPress: (navigation) => navigation.navigate("What's On?")
   },
   {
-    title: 'Recognizer',
+    // title: 'Recognizer',
     source: require('./assets/HomePage/Camera.jpg'),
     onPress: (navigation) => navigation.navigate("Recognizer")
   },
@@ -66,7 +66,6 @@ export default class HomePage extends Component {
     return (
       <TouchableOpacity onPress={() => item.onPress(navigation)} style={styles.gridItem}>
         <Image source={item.source} style={styles.gridImage} />
-        <Text style={styles.gridTitle}>{item.title}</Text>
       </TouchableOpacity>
     );
   }
@@ -162,11 +161,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   gridItem: {
-    width: Dimensions.get('window').width * 0.4,
-    height: Dimensions.get('window').height * 0.2,
+    width: Dimensions.get('window').width * 0.49,
+    height: Dimensions.get('window').height * 0.25,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 0,
   },
   gridImage: {
     width: '100%',
@@ -176,7 +175,7 @@ const styles = StyleSheet.create({
   },
   gridTitle: {
     fontSize: 14,
-    marginTop: 5,
+    marginTop: 0,
     textAlign: 'center',
   },
   paginationContainer: {
