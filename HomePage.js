@@ -165,6 +165,7 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height * 0.25,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: -37,
     marginBottom: 0,
   },
   gridImage: {
