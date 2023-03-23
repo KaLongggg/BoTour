@@ -1,14 +1,44 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
-export default function HoursandLocationScreen() {
+export default function HoursAndLocation() {
   return (
-    <View style={{ flex: 1, alignItems: 'left', justifyContent: 'top' }}>
-      <Text style={{ fontSize: 30, padding: 10 }}>Hours and Location</Text>
-      <Text style={{ fontSize: 24 }}></Text>
-      <Text style={{ fontSize: 24, padding: 10  }}>Temporary traffic changes:</Text>
-      <Text style={{ fontSize: 15, padding: 10 }}>Transport for NSW will carry out temporary traffic management activities around the University of Wollongong (UOW) and TAFE NSW from Monday 27 February 2023, to reduce congestion and ensure the safety of road users. Traffic Management will be in place weekday mornings from 7.45am to 9.15am for around six weeks. For more details visit the NSW Transport website.</Text>
-      <Text style={{ fontSize: 24, padding: 10 }}>Entry to Wollongong Botanic Garden is free!</Text>
+    <View style={styles.container}>
+      <Text style={styles.header}>Hours and Location</Text>
+      <Text style={styles.text}>
+        Wollongong Botanic Garden is open every day of the year, except Christmas Day.
+      </Text>
+      <Text style={styles.text}>
+        Summer (September - April)
+        7:00am - 7:00pm
+      </Text>
+      <Text style={styles.text}>
+        Winter (May - August)
+        7:00am - 5:00pm
+      </Text>
+      <Text style={styles.text}>
+        Wollongong Botanic Garden is located at the top of Kembla St, Wollongong.
+      </Text>
+      <Text style={styles.text}>
+        The closest parking is available in the Botanic Garden car park.
+      </Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#fff',
+  },
+  header: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 20,
+  },
+  text: {
+    fontSize: 16,
+    marginTop: 20,
+  },
+});

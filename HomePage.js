@@ -157,7 +157,6 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(0, 0, 0, 0.2)', // Add text shadow
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10,
-    fontFamily: 'Courier'
   },
   gridContainer: {
     flexDirection: 'row',
