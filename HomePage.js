@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image, Dimensions, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, Image, Dimensions, TouchableOpacity, ScrollView} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
 const gridImages = [
@@ -154,6 +154,7 @@ const styles = StyleSheet.create({
     textShadowRadius: 10,
   },
   gridContainer: {
+    height: Dimensions.get('window').height * 0.45,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
