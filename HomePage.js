@@ -7,22 +7,20 @@ const gridImages = [
     // title: 'Collection',
     source: require('./assets/HomePage/Collection.jpg'),
     onPress: (navigation) => navigation.navigate('Collection')
-      // Handle navigation to the corresponding page
   },
   {
     // title: 'Tours',
     source: require('./assets/HomePage/Tours.jpg'),
     onPress: (navigation) => navigation.navigate('Tours'),
-  },
-  
+  },  
   {
-    // title: "What's on",
-    source: require('./assets/HomePage/Whatson.jpg'),
+    title: "What's on",
+    source: require('./assets/HomePage/whatson.jpg'),
     onPress: (navigation) => navigation.navigate("What's On?")
   },
   {
-    // title: 'Recognizer',
-    source: require('./assets/HomePage/Camera.jpg'),
+    title: 'Recognizer',
+    source: require('./assets/HomePage/camera.jpg'),
     onPress: (navigation) => navigation.navigate("Recognizer")
   },
 ];
