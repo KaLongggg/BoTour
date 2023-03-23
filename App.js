@@ -15,7 +15,7 @@ import SearchScreen from './SearchScreen';
 import FavoriteScreen from './FavoriteScreen';
 import SideMenu from './SideMenu';
 import WhatsOnScreen from './WhatsOnScreen';
-import MyJournalScreen from './MyJournalScreen';
+import CollectionScreen from './CollectionScreen';
 import ToursScreen from './ToursScreen';
 import DiscoverScreen from './DiscoverScreen';
 import HoursandLocationScreen from './HoursandLocationScreen';
@@ -77,7 +77,7 @@ function MainStackNavigator() {
       
       <Stack.Screen name="Main" component={BottomTabNavigator} />
       <Stack.Screen name="What's On?" component={WhatsOnScreen} />
-      <Stack.Screen name="My Journal" component={MyJournalScreen} />
+      <Stack.Screen name="Collection" component={CollectionScreen} />
       <Stack.Screen name="Tours" component={ToursScreen} />
       <Stack.Screen name="Discover" component={DiscoverScreen} />
       <Stack.Screen name="Hours and Location" component={HoursandLocationScreen} />
