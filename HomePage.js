@@ -4,12 +4,12 @@ import Carousel from 'react-native-snap-carousel';
 
 const gridImages = [
   {
-    title: 'Collection',
+    // title: 'Collection',
     source: require('./assets/HomePage/Collection.jpg'),
     onPress: (navigation) => navigation.navigate('Collection')
   },
   {
-    title: 'Tours',
+    // title: 'Tours',
     source: require('./assets/HomePage/Tours.jpg'),
     onPress: (navigation) => navigation.navigate('Tours'),
   },  
@@ -64,7 +64,6 @@ export default class HomePage extends Component {
     return (
       <TouchableOpacity onPress={() => item.onPress(navigation)} style={styles.gridItem}>
         <Image source={item.source} style={styles.gridImage} />
-        <Text style={styles.gridTitle}>{item.title}</Text>
       </TouchableOpacity>
     );
   }
@@ -160,11 +159,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   gridItem: {
-    width: Dimensions.get('window').width * 0.4,
-    height: Dimensions.get('window').height * 0.2,
+    width: Dimensions.get('window').width * 0.49,
+    height: Dimensions.get('window').height * 0.25,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 0,
   },
   gridImage: {
     width: '100%',
@@ -174,7 +173,7 @@ const styles = StyleSheet.create({
   },
   gridTitle: {
     fontSize: 14,
-    marginTop: 5,
+    marginTop: 0,
     textAlign: 'center',
   },
   paginationContainer: {
