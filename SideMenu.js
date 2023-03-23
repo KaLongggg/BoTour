@@ -1,10 +1,13 @@
 import React from 'react';
 import { Ionicons, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
-import { Linking } from 'react-native';
+import { Linking, View } from 'react-native';
+
+
 
 function SideMenu(props) {
   return (
+    <View style={{ flex: 1 }}>
     <DrawerContentScrollView {...props}>
       <DrawerItem
         icon={({ color, size }) => <Ionicons name="ios-home" size={size} color={color} />}
@@ -45,7 +48,34 @@ function SideMenu(props) {
         label="About"
         onPress={() => props.navigation.navigate('About')}
       />
-      <DrawerItem
+    </DrawerContentScrollView>
+    <View>
+        <DrawerItem
+          icon={({ color, size }) => (
+            <Ionicons name="logo-instagram" size={size} color={color} />
+          )}
+          label="Instagram"
+          onPress={() =>
+            Linking.openURL('https://www.instagram.com/wollongongbotanicgarden/')
+          }
+        />
+        <DrawerItem
+          icon={({ color, size }) => (
+            <Ionicons name="logo-facebook" size={size} color={color} />
+          )}
+          label="Facebook"
+          onPress={() =>
+            Linking.openURL('https://www.facebook.com/wollongongbotanicgarden/')
+          }
+        />
+        <DrawerItem
+          icon={({ color, size }) => (
+            <MaterialCommunityIcons name="youtube" size={size} color={color} />
+          )}
+          label="YouTube"
+          onPress={() => Linking.openURL('https://www.youtube.com/channel/UCe0yl5iYHl5VqNogb6fN9QQ')}
+        />
+        <DrawerItem
         icon={({ color, size }) => (
           <MaterialIcons name="language" size={size} color={color} />
         )}
@@ -54,35 +84,11 @@ function SideMenu(props) {
           // Implement language selection functionality here
         }}
       />
-      <DrawerItem
-        icon={({ color, size }) => (
-          <Ionicons name="logo-instagram" size={size} color={color} />
-        )}
-        label="Instagram"
-        onPress={() => Linking.openURL('https://www.instagram.com/wollongongbotanicgarden/')}
-      />
-      <DrawerItem
-        icon={({ color, size }) => (
-          <Ionicons name="logo-facebook" size={size} color={color} />
-        )}
-        label="Facebook"
-        onPress={() => Linking.openURL('https://www.facebook.com/wollongongbotanicgarden/')}
-      />
-      <DrawerItem
-        icon={({ color, size }) => (
-          <Ionicons name="logo-twitter" size={size} color={color} />
-        )}
-        label="Twitter"
-        onPress={() => Linking.openURL('https://twitter.com/Wollongong_City')}
-      />
-      <DrawerItem
-        icon={({ color, size }) => (
-          <MaterialCommunityIcons name="youtube" size={size} color={color} />
-        )}
-        label="YouTube"
-        onPress={() => Linking.openURL('https://www.youtube.com/user/WollongongCity')}
-      />
-    </DrawerContentScrollView>
+      </View>
+    
+    
+    
+    </View>
   );
 }
 
