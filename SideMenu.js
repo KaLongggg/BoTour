@@ -80,9 +80,9 @@ function SideMenu(props) {
         icon={({ color, size }) => (
           <MaterialIcons name="language" size={size} color={color} />
         )}
-        label="Language"
+        label="Official Website"
         onPress={() => {
-          // Implement language selection functionality here
+          Linking.openURL('https://wollongongbotanicgarden.com.au/')
         }}
       />
       </View>
