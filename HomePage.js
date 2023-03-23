@@ -18,14 +18,14 @@ const gridImages = [
   
   {
     title: "What's on",
-    source: require('./assets/HomePage/Whatson.jpg'),
+    source: require('./assets/HomePage/whatson.jpg'),
     onPress: () => {
       // Handle navigation to the corresponding page
     },
   },
   {
     title: 'Recognizer',
-    source: require('./assets/HomePage/Camera.jpg'),
+    source: require('./assets/HomePage/camera.jpg'),
     onPress: () => {
       // Handle navigation to the corresponding page
     },
