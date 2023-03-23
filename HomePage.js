@@ -12,20 +12,20 @@ const gridImages = [
   },
   {
     title: 'Tours',
-    source: require('./assets/HomePage/Tour.png'),
+    source: require('./assets/HomePage/Tours.jpg'),
     onPress: (navigation) => navigation.navigate('Tours'),
   },
   
   {
     title: "What's on",
-    source: require('./assets/HomePage/whatson.jpg'),
+    source: require('./assets/HomePage/Whatson.jpg'),
     onPress: () => {
       // Handle navigation to the corresponding page
     },
   },
   {
     title: 'Recognizer',
-    source: require('./assets/HomePage/camera.jpg'),
+    source: require('./assets/HomePage/Camera.jpg'),
     onPress: () => {
       // Handle navigation to the corresponding page
     },
