@@ -55,11 +55,13 @@ function BottomTabNavigator() {
         inactiveTintColor: 'gray',
       })}
     >
+      {/* <BottomTab.Screen name="Home" component={(props) => <HomePage {...props} />} /> */}
       <BottomTab.Screen name="Home" component={HomePage} />
       <BottomTab.Screen name="Recognizer" component={RecognizerScreen} />
       <BottomTab.Screen name="Map" component={MapScreen} />
       <BottomTab.Screen name="Search" component={SearchScreen} />
       <BottomTab.Screen name="Favorite" component={FavoriteScreen} />
+      
     </BottomTab.Navigator>
   );
 }
