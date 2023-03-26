@@ -130,6 +130,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'Grey',
     borderRadius: 15,
     height: Dimensions.get('window').height * 0.3,
+    width: Dimensions.get('window').width,
     paddingTop: 10,
     padding: 0,
     justifyContent: 'center',
@@ -138,7 +139,7 @@ const styles = StyleSheet.create({
 
   carouselImage: {
     width: '100%',
-    height: '90%',
+    height: '100%',
     resizeMode: 'cover',
     borderRadius: 15,
   },
