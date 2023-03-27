@@ -8,19 +8,19 @@ import { Linking, View } from 'react-native';
 function SideMenu(props) {
   const drawerItemStyle = { marginRight: -50 };
   return (
-    <View style={{ flex:  1}}>
+    <View style={{ flex:  1, backgroundColor: '#cfe3d4'}}>
     <DrawerContentScrollView {...props}>
       <DrawerItem
         icon={({ color, size }) => <Ionicons name="ios-home" size={size} color={color} />}
         label="Home"
         onPress={() => props.navigation.navigate('Home')}
-        labelStyle={{ fontSize: 16 }}
+        labelStyle={{ fontSize: 17 }}
       />
       <DrawerItem
         icon={({ color, size }) => <Ionicons name="calendar" size={size} color={color} />}
         label="What's On?"
         onPress={() => props.navigation.navigate("What's On?")}
-        labelStyle={{ fontSize: 16 }}
+        labelStyle={{ fontSize: 17 }}
       />
       <DrawerItem
         icon={({ color, size }) => (
@@ -28,7 +28,7 @@ function SideMenu(props) {
         )}
         label="Collection"
         onPress={() => props.navigation.navigate('Collection')}
-        labelStyle={{ fontSize: 16 }}
+        labelStyle={{ fontSize: 17 }}
 
 
       />
@@ -36,20 +36,20 @@ function SideMenu(props) {
         icon={({ color, size }) => <Ionicons name="walk" size={size} color={color} />}
         label="Tours"
         onPress={() => props.navigation.navigate('Tours')}
-        labelStyle={{ fontSize: 16 }}
+        labelStyle={{ fontSize: 17 }}
 
       />
       <DrawerItem
         icon={({ color, size }) => <Ionicons name="compass" size={size} color={color} />}
         label="Discover"
         onPress={() => props.navigation.navigate('Discover')}
-        labelStyle={{ fontSize: 16 }}
+        labelStyle={{ fontSize: 17 }}
       />
       <DrawerItem
         icon={({ color, size }) => <Ionicons name="navigate" size={size} color={color} />}
         label="Hours and Location"
         onPress={() => props.navigation.navigate('Hours and Location')}
-        labelStyle={{ fontSize: 16 }}
+        labelStyle={{ fontSize: 17 }}
       />
       <DrawerItem
         icon={({ color, size }) => (
@@ -57,9 +57,10 @@ function SideMenu(props) {
         )}
         label="About"
         onPress={() => props.navigation.navigate('About')}
-        labelStyle={{ fontSize: 16 }}
+        labelStyle={{ fontSize: 17 }}
       />
     </DrawerContentScrollView>
+
     <View style={{ flexDirection: 'row'}}> 
       <DrawerItem
         icon={({ color, size }) => (
@@ -109,3 +110,5 @@ function SideMenu(props) {
 }
 
 export default SideMenu;
+
+
