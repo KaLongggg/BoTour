@@ -48,7 +48,7 @@ function BottomTabNavigator() {
           return <Ionicons name={iconName} size={35} color={color} />;
         },
         tabBarLabel: ({ focused, color }) => {
-          return <Text style={{ color: focused ? 'blue' : 'gray' }}>{route.name}</Text>;
+          return <Text style={{ fontSize: 15, color: focused ? 'blue' : 'gray' }}>{route.name}</Text>;
         },
         tabBarVisible: true,
         activeTintColor: 'blue',
