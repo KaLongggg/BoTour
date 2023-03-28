@@ -93,7 +93,7 @@ export default class HomePage extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Carousel
+      <Carousel
           data={images}
           renderItem={this._renderItem.bind(this)}
           sliderWidth={Dimensions.get('window').width}
@@ -104,6 +104,7 @@ export default class HomePage extends Component {
           autoplayDelay={2000}
           autoplayInterval={4000}
           onSnapToItem={this.handleSnapToItem}
+          style={{ alignSelf: 'center', marginTop: 10 }}
         />
         {this.renderPagination()}
         <View style={styles.gridContainer}>
@@ -138,8 +139,8 @@ const styles = StyleSheet.create({
   },
 
   carouselImage: {
-    width: '100%',
-    height: '100%',
+    width: '75%',
+    height: '90%',
     resizeMode: 'cover',
     borderRadius: 15,
   },
@@ -158,19 +159,19 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 10,
   },
   gridItem: {
     width: Dimensions.get('window').width * 0.49,
     height: Dimensions.get('window').height * 0.25,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: -37,
+    marginTop: -20,
     marginBottom: 0,
   },
   gridImage: {
     width: '100%',
-    height: '80%',
+    height: '90%',
     resizeMode: 'cover',
     borderRadius: 10,
   },

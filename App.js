@@ -33,10 +33,10 @@ function BottomTabNavigator() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === 'Home') {
-            iconName = focused ? 'ios-home' : 'ios-home-outline';
+          if (route.name === 'More') {
+            iconName = focused ? 'ios-menu' : 'ios-menu-outline';
           } else if (route.name === 'Recognizer') {
-            iconName = focused ? 'ios-search' : 'ios-search-outline';
+            iconName = focused ? 'ios-camera' : 'ios-camera-outline';
           } else if (route.name === 'Map') {
             iconName = focused ? 'ios-map' : 'ios-map-outline';
           } else if (route.name === 'Search') {
@@ -45,7 +45,7 @@ function BottomTabNavigator() {
             iconName = focused ? 'ios-heart' : 'ios-heart-outline';
           }
 
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return <Ionicons name={iconName} size={35} color={color} />;
         },
         tabBarLabel: ({ focused, color }) => {
           return <Text style={{ color: focused ? 'blue' : 'gray' }}>{route.name}</Text>;
@@ -53,10 +53,13 @@ function BottomTabNavigator() {
         tabBarVisible: true,
         activeTintColor: 'blue',
         inactiveTintColor: 'gray',
+        tabBarStyle: {
+          height: 80, // change this to your desired height
+        },
       })}
     >
       {/* <BottomTab.Screen name="Home" component={(props) => <HomePage {...props} />} /> */}
-      <BottomTab.Screen name="Home" component={HomePage} />
+      <BottomTab.Screen name="More" component={HomePage} />
       <BottomTab.Screen name="Recognizer" component={RecognizerScreen} />
       <BottomTab.Screen name="Map" component={MapScreen} />
       <BottomTab.Screen name="Search" component={SearchScreen} />
