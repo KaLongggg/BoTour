@@ -27,19 +27,30 @@ const About = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    flex: 1,
+    padding: 10,
+    backgroundColor: '#fff',
   },
-  header: {
+  heading: {
     fontSize: 24,
     fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 8,
   },
-  paragraph: {
+  subheading: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 8,
+    marginBottom: 4,
+  },
+  text: {
     fontSize: 16,
-    marginBottom: 16,
     lineHeight: 24,
-    textAlign: 'justify',
+  },
+  link: {
+    fontSize: 16,
+    color: 'blue',
+    textDecorationLine: 'underline',
+    marginTop: 8,
   },
 });
 
