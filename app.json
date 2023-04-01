@@ -15,16 +15,27 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app requires access to the camera to take photos of plants for recognition.",
+        "NSPhotoLibraryAddUsageDescription": "This app requires access to the photo library to select photos of plants for recognition.",
+        "NSPhotoLibraryUsageDescription": "This app requires access to the photo library to select photos of plants for recognition.",
+        "NSMicrophoneUsageDescription": "This app requires access to the microphone for video recording purposes."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "CAMERA",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     }
   }
 }
+
