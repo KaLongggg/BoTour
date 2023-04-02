@@ -29,20 +29,11 @@ function SideMenu(props) {
         label="Collection"
         onPress={() => props.navigation.navigate('Collection')}
         labelStyle={{ fontSize: 17 }}
-
-
       />
       <DrawerItem
         icon={({ color, size }) => <Ionicons name="walk" size={size} color={color} />}
         label="Tours"
         onPress={() => props.navigation.navigate('Tours')}
-        labelStyle={{ fontSize: 17 }}
-
-      />
-      <DrawerItem
-        icon={({ color, size }) => <Ionicons name="compass" size={size} color={color} />}
-        label="Discover"
-        onPress={() => props.navigation.navigate('Discover')}
         labelStyle={{ fontSize: 17 }}
       />
       <DrawerItem
