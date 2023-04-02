@@ -17,7 +17,6 @@ import SideMenu from './SideMenu';
 import WhatsOnScreen from './WhatsOnScreen';
 import CollectionScreen from './CollectionScreen';
 import ToursScreen from './ToursScreen';
-import DiscoverScreen from './DiscoverScreen';
 import HoursandLocationScreen from './HoursandLocationScreen';
 import AboutScreen from './AboutScreen';
 
@@ -82,7 +81,6 @@ function MainStackNavigator() {
       <Stack.Screen name="What's On?" component={WhatsOnScreen} />
       <Stack.Screen name="Collection" component={CollectionScreen} />
       <Stack.Screen name="Tours" component={ToursScreen} />
-      <Stack.Screen name="Discover" component={DiscoverScreen} />
       <Stack.Screen name="Hours and Location" component={HoursandLocationScreen} />
       <Stack.Screen name="About" component={AboutScreen} />
     </Stack.Navigator>
