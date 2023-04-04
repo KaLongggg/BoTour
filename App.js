@@ -95,7 +95,15 @@ export default function App() {
         drawerContent={(props) => <SideMenu {...props} />}
         screenOptions={({ route }) => ({
           headerTitle: route.name,
-        })}
+          headerStyle: {
+            backgroundColor: '#5F8575',
+            height: 120,
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+      fontWeight: 'bold'
+    }
+  })}
       >
         <Drawer.Screen 
           name="BoTour" 
