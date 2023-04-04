@@ -8,7 +8,7 @@ import { Linking, View } from 'react-native';
 function SideMenu(props) {
   const drawerItemStyle = { marginRight: -50 };
   return (
-    <View style={{ flex:  1, backgroundColor: '#cfe3d4'}}>
+    <View style={{ flex:  1, backgroundColor: '#BCC6CC'}}>
     <DrawerContentScrollView {...props}>
       <DrawerItem
         icon={({ color, size }) => <Ionicons name="ios-home" size={30} color={color} />}
