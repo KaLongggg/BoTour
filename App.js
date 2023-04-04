@@ -44,7 +44,7 @@ function BottomTabNavigator() {
             iconName = focused ? 'ios-heart' : 'ios-heart-outline';
           }
 
-          return <Ionicons name={iconName} size={35} color={color} />;
+          return <Ionicons name={iconName} size={30} color={color} />;
         },
         tabBarLabel: ({ focused, color }) => {
           return <Text style={{ fontSize: 15, color: focused ? 'blue' : 'gray' }}>{route.name}</Text>;
@@ -97,7 +97,18 @@ export default function App() {
           headerTitle: route.name,
         })}
       >
-        <Drawer.Screen name="BoTour" component={MainStackNavigator} />
+        <Drawer.Screen 
+          name="BoTour" 
+          component={MainStackNavigator} 
+          options={{
+            drawerIcon: ({ focused, size }) => (
+              <Entypo 
+                name="menu" 
+                size={size + 20}  
+              />
+            ),
+          }}
+        />
       </Drawer.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>

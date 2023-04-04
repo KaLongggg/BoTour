@@ -1,10 +1,21 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { FlatList, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 export default function WhatsOnScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ fontSize: 24 }}>What's On Screen</Text>
+      <FlatList
+        data={gridImages}
+        keyExtractor={(item, index) => index.toString()}
+        numColumns={2}
+        contentContainerStyle={styles.container}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={() => item.onPress(navigation)}>
+            <Image source={item.source} style={styles.image} />
+          </TouchableOpacity>
+        )}
+    />
     </View>
   );
 }
@@ -13,7 +24,7 @@ const gridImages = [
   {
     // title: 'Events Calendar',
     source: require('./assets/WhatsOn/EventsCalendar.jpg'),
-    link: '',
+    onPress: (navigation) => navigation.navigate('EventsCalendar')
   },
   {
     // title: 'Sculpture in the Garden',
@@ -70,3 +81,16 @@ const images = [
     source: require('./assets/WhatsOn/News.jpg'),
   },
 ];
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 16,
+  },
+  image: {
+    width: '40%',
+    aspectRatio: 0.8,
+    margin: 8,
+  },
+});
