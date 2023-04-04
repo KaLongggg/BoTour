@@ -93,19 +93,20 @@ export default class HomePage extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <Carousel
-          data={images}
-          renderItem={this._renderItem.bind(this)}
-          sliderWidth={Dimensions.get('window').width}
-          itemWidth={Dimensions.get('window').width * 0.75}
-          layout={'default'}
-          loop={true}
-          autoplay={true}
-          autoplayDelay={2000}
-          autoplayInterval={4000}
-          onSnapToItem={this.handleSnapToItem}
-          style={{ alignSelf: 'center', marginTop: 10 }}
-        />
+<Carousel
+    data={images}
+    renderItem={this._renderItem.bind(this)}
+    sliderWidth={Dimensions.get('window').width}
+    itemWidth={Dimensions.get('window').width} // Change this line
+    layout={'default'}
+    loop={true}
+    autoplay={true}
+    autoplayDelay={2000}
+    autoplayInterval={4000}
+    onSnapToItem={this.handleSnapToItem}
+    style={{ alignSelf: 'center', marginTop: 10 }}
+/>
+
         {this.renderPagination()}
         <View style={styles.gridContainer}>
           {gridImages.map((item, index) => (
@@ -134,12 +135,13 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     paddingTop: 10,
     padding: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'center', // Add this line
+    alignItems: 'center', // Add this line
   },
+  
 
   carouselImage: {
-    width: '75%',
+    width: '90%',
     height: '90%',
     resizeMode: 'cover',
     borderRadius: 15,
