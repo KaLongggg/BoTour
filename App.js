@@ -32,8 +32,8 @@ function BottomTabNavigator() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === 'More') {
-            iconName = focused ? 'ios-menu' : 'ios-menu-outline';
+          if (route.name === 'Home') {
+            iconName = focused ? 'ios-home' : 'ios-home-outline';
           } else if (route.name === 'Recognizer') {
             iconName = focused ? 'ios-camera' : 'ios-camera-outline';
           } else if (route.name === 'Map') {
@@ -58,7 +58,7 @@ function BottomTabNavigator() {
       })}
     >
       {/* <BottomTab.Screen name="Home" component={(props) => <HomePage {...props} />} /> */}
-      <BottomTab.Screen name="More" component={HomePage} />
+      <BottomTab.Screen name="Home" component={HomePage} />
       <BottomTab.Screen name="Recognizer" component={RecognizerScreen} />
       <BottomTab.Screen name="Map" component={MapScreen} />
       <BottomTab.Screen name="Search" component={SearchScreen} />

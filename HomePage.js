@@ -14,12 +14,12 @@ const gridImages = [
     onPress: (navigation) => navigation.navigate('Tours'),
   },  
   {
-    title: "What's on",
+    // title: "What's on",
     source: require('./assets/HomePage/whatson.jpg'),
     onPress: (navigation) => navigation.navigate("What's On?")
   },
   {
-    title: 'Recognizer',
+    // title: 'Recognizer',
     source: require('./assets/HomePage/camera.jpg'),
     onPress: (navigation) => navigation.navigate("Recognizer")
   },
