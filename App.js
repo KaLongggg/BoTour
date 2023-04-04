@@ -18,7 +18,7 @@ import WhatsOnScreen from './WhatsOnScreen';
 import CollectionScreen from './CollectionScreen';
 import ToursScreen from './ToursScreen';
 import HoursandLocationScreen from './HoursandLocationScreen';
-import About from './About';
+import AboutScreen from './AboutScreen';
 
 const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
