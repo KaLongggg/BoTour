@@ -9,17 +9,6 @@ const About = () => {
       <Text style={styles.text}>
         Set on 27 hectares at the foot of Mount Keira, Wollongong Botanic Garden is a short distance from the City Centre, and next to the University of Wollongong's main campus. We are located approximately 85 kilometres south of Sydney.
       </Text>
-       <Image source={require("./assets/about2.png")} style={{ width: "100%", height: 200, marginTop: 20 }} ></Image>
-
-      <Text style={styles.text}>
-        This beautiful garden features various themed areas, including a rose garden, a succulent garden, and a rainforest area. It offers a peaceful and serene environment for visitors to enjoy and explore.
-      </Text>
-
-      <Image source={require("./assets/about3.png")} style={{ width: "100%", height: 200, marginTop: 20 }} ></Image>
-
-      <Text style={styles.text}>
-        The garden hosts a range of events and activities throughout the year, including guided tours, workshops, and seasonal festivals. It is a popular destination for both locals and tourists alike.
-      </Text>
 
     </ScrollView>
   );
