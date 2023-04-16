@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { FlatList, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet, Linking } from 'react-native';
+
 
 export default function WhatsOnScreen({ navigation }) {
   return (
@@ -24,37 +24,47 @@ const gridImages = [
   {
     // title: 'Events Calendar',
     source: require('./assets/WhatsOn/EventsCalendar.jpg'),
-    onPress: (navigation) => navigation.navigate('EventsCalendar')
+    onPress: () => {
+      Linking.openURL('https://wollongongbotanicgarden.com.au/events/calendar');
+    },
   },
   {
     // title: 'Sculpture in the Garden',
     source: require('./assets/WhatsOn/SculptureInTheGarden.jpg'),
-    onPress: (navigation) => navigation.navigate('SculptureInTheGarden')
+        onPress: () => {
+      Linking.openURL('https://wollongongbotanicgarden.com.au/events/sculpture-in-the-garden');
+    },
   },
   {
     // title: 'Plant Sales',
+    // Create a page but omit 'Upcoming Sales' 
     source: require('./assets/WhatsOn/PlantSales.jpg'),
     onPress: (navigation) => navigation.navigate('PlantSales')
   },
   {
-    // title: 'Botanic Gardens Day',
+    // title: 'Botanic Gardens Day', 
+    //Create a page 
     source: require('./assets/WhatsOn/BotanicGardernsDay.jpg'),
     onPress: (navigation) => navigation.navigate('BotanicGardensDay')
   },
   {
-    // title: '50th Anniversary',
+    // title: '50th Anniversary', 
+    //Create a page 
     source: require('./assets/WhatsOn/50thAnniversary.jpg'),
     onPress: (navigation) => navigation.navigate('50thAnniversary')
   },
   {
-    // title: 'Spaces for Hire',
+    // title: 'Spaces for Hire', 
+    //Create a page
     source: require('./assets/WhatsOn/SpacesForHire.jpg'),
     onPress: (navigation) => navigation.navigate('SpacesForHire')
   },
   {
     // title: 'News',
     source: require('./assets/WhatsOn/News.jpg'),
-    onPress: (navigation) => navigation.navigate('News')
+    onPress: () => {
+      Linking.openURL('https://wollongongbotanicgarden.com.au/events/news');
+    },
   },
 ];
 
