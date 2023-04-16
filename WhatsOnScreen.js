@@ -2,20 +2,20 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { FlatList, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
-export default function WhatsOnScreen() {
+export default function WhatsOnScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.container}>
       <FlatList
         data={gridImages}
         keyExtractor={(item, index) => index.toString()}
         numColumns={2}
-        contentContainerStyle={styles.container}
+        contentContainerStyle={styles.listContainer}
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => item.onPress(navigation)}>
             <Image source={item.source} style={styles.image} />
           </TouchableOpacity>
         )}
-    />
+      />
     </View>
   );
 }
@@ -58,39 +58,19 @@ const gridImages = [
   },
 ];
 
-const images = [
-  {
-    source: require('./assets/WhatsOn/EventsCalendar.jpg'),
-  },
-  {
-    source: require('./assets/WhatsOn/SculptureInTheGarden.jpg'),
-  },
-  {
-    source: require('./assets/WhatsOn/PlantSales.jpg'),
-  },
-  {
-    source: require('./assets/WhatsOn/BotanicGardernsDay.jpg'),
-  },
-  {
-    source: require('./assets/WhatsOn/50thAnniversary.jpg'),
-  },
-  {
-    source: require('./assets/WhatsOn/SpacesForHire.jpg'),
-  },
-  {
-    source: require('./assets/WhatsOn/News.jpg'),
-  },
-];
-
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
+    flexDirection: 'row',
     justifyContent: 'center',
-    padding: 16,
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    padding: 14,
   },
   image: {
-    width: '40%',
-    aspectRatio: 0.8,
-    margin: 8,
+    width: '55%',
+    aspectRatio: 0.9,
+    margin: 7,
+    height: 200,
+    borderRadius: 10,
   },
 });
