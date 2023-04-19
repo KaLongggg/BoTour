@@ -20,7 +20,8 @@ const PlantSales = () => {
           {'\n'}{'\n'}
           Our expert horticulturalists are on hand at each sale to help with advice about plant selection for your garden.
           {'\n'}{'\n'}
-          <Text style={{fontWeight: 'bold'}}>Please note:</Text> this Plant Sale is only open to residents of the Wollongong City Council area. Refer to 'Payment methods' below for more detail.
+          <Text style={{fontWeight: 'bold'}}>Please note:</Text> 
+          this Plant Sale is only open to residents of the Wollongong City Council area. Refer to 'Payment methods' below for more detail.
           
           
           {'\n'}{'\n'}

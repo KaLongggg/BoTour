@@ -44,7 +44,7 @@ const gridImages = [
   {
     // title: 'Botanic Gardens Day', 
     //Create a page 
-    source: require('./assets/WhatsOn/BotanicGardernsDay.jpg'),
+    source: require('./assets/WhatsOn/BotanicGardensDay.jpg'),
     onPress: (navigation) => navigation.navigate('BotanicGardensDay')
   },
   {
