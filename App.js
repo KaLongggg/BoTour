@@ -21,6 +21,8 @@ import HoursandLocationScreen from './HoursandLocationScreen';
 import AboutScreen from './AboutScreen';
 import PlantSales from './Sub_WhatsOnScreen/PlantSales';
 import BotanicGardensDay from './Sub_WhatsOnScreen/BotanicGardensDay';
+import Anniversary from './Sub_WhatsOnScreen/Anniversary';
+
 
 const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -87,6 +89,8 @@ function MainStackNavigator() {
       <Stack.Screen name="About" component={AboutScreen} />
       <Stack.Screen name="PlantSales" component={PlantSales} />
       <Stack.Screen name="BotanicGardensDay" component={BotanicGardensDay} />
+      <Stack.Screen name="Anniversary" component={Anniversary} />
+      
     </Stack.Navigator>
   );
 }

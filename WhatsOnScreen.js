@@ -50,8 +50,8 @@ const gridImages = [
   {
     // title: '50th Anniversary', 
     //Create a page 
-    source: require('./assets/WhatsOn/50thAnniversary.jpg'),
-    onPress: (navigation) => navigation.navigate('50thAnniversary')
+    source: require('./assets/WhatsOn/Anniversary.jpg'),
+    onPress: (navigation) => navigation.navigate('Anniversary')
   },
   {
     // title: 'Spaces for Hire', 
