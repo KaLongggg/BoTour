@@ -172,8 +172,8 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
   gridImage: {
-    width: '100%',
-    height: '90%',
+    width: '95%',
+    height: '85%',
     resizeMode: 'cover',
     borderRadius: 10,
   },

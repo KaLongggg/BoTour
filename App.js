@@ -19,6 +19,7 @@ import CollectionScreen from './CollectionScreen';
 import ToursScreen from './ToursScreen';
 import HoursandLocationScreen from './HoursandLocationScreen';
 import AboutScreen from './AboutScreen';
+import PlantSales from './Sub_WhatsOnScreen/PlantSales';
 
 const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -83,6 +84,7 @@ function MainStackNavigator() {
       <Stack.Screen name="Tours" component={ToursScreen} />
       <Stack.Screen name="Hours and Location" component={HoursandLocationScreen} />
       <Stack.Screen name="About" component={AboutScreen} />
+      <Stack.Screen name="PlantSales" component={PlantSales} />
     </Stack.Navigator>
   );
 }
@@ -122,6 +124,9 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+
+
 
 const styles = StyleSheet.create({
   container: {
