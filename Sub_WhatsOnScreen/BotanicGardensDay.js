@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, Text, StyleSheet, ScrollView, Linking } from 'react-native';
+import { View, Image, Text, StyleSheet, ScrollView, Linking, Dimensions } from 'react-native';
 import Accordion from './Accordion'
 
 const BotanicGardensDay = () => {
@@ -35,7 +35,10 @@ const BotanicGardensDay = () => {
                             
             <Accordion title="Free Activities">
               <Text>
-                CREATE A TABLE!
+              <Image
+                style={{...styles.activity}}
+                source={require('../assets/WhatsOn/FreeActivity.jpg')}
+              />
               </Text>
             </Accordion>
             <Text>{"\n"}</Text>
@@ -77,6 +80,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 10,
     marginTop: 10,
+  },
+  activity:{
+    width: Dimensions.get('window').width,
+    height: 600,
   },
   title: {
     fontSize: 20,

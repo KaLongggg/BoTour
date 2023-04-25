@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 
 const Accordion = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,12 +25,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderRadius: 5,
     overflow: 'hidden',
+    paddingRight: 35,
+    width: Dimensions.get('window').width,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingVertical: 0,
+    paddingRight:20,
+    backgroundColor: '#d3d3d3',
   },
   title: {
     fontSize: 18,
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   content: {
-    padding: 20,
+    paddingRight:0,
   },
 });
 

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { View, Image, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Image, Text, StyleSheet, ScrollView, Linking } from 'react-native';
 import Accordion from './Accordion'
 
 const PlantSales = () => {
 
     const [isAccordionOpen, setIsAccordionOpen] = useState(false);
-
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -37,13 +36,12 @@ const PlantSales = () => {
               onPress={() => Linking.openURL('https://wollongongbotanicgarden.com.au/events/calendar')}
             >
             our calendar
-            </Text>. 
-
-            <Accordion title="Available plants">
+            </Text>
+            <Text>{"\n"}{"\n"}</Text>
+            
+            <Accordion title="Available plants" >
               <Text>
-                Below is the plant list for 21 April 2023.
-
-                This list is updated a few days prior to each sale.
+                Below is the plant list for 21 April 2023. This list is updated a few days prior to each sale.
 
                 Plants are listed with their scientific name in italics, followed by the common name in brackets.
 
