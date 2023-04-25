@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, ScrollView, Linking, Image } from 'react-native
 const HoursAndLocation = () => {
   return (
     <ScrollView style={styles.container}>
-      <Image source={require("./assets/map.png")} style={{ width: "100%", height: 200 }} ></Image>
+      <Image source={require("./assets/map1.png")} style={{ width: "100%", height: 200 }} ></Image>
       <Text style={styles.subheading}>Opening Hours</Text>
       <Text style={styles.text}>
         We are open daily (except Christmas
