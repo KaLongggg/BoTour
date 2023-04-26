@@ -1,114 +1,196 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Alert, Modal, ActivityIndicator} from 'react-native';
 import { Camera } from 'expo-camera';
 import * as tf from '@tensorflow/tfjs';
-import '@tensorflow/tfjs-react-native';
-import { bundleResourceIO } from '@tensorflow/tfjs-react-native';
+import { fetch, bundleResourceIO } from '@tensorflow/tfjs-react-native';
 import * as jpeg from 'jpeg-js';
-import * as FileSystem from 'expo-file-system';
-import * as base64js from 'base64-js';
-import base64 from 'react-native-base64';
-import * as Asset from 'expo-asset'; // Import expo-asset
+import * as Buffer from 'buffer';
+import "@tensorflow/tfjs-react-native";
+import * as ImageManipulator from 'expo-image-manipulator';
+import { useNavigation } from '@react-navigation/native';
 
-const loadWeightsBuffers = async () => {
-  const assets = await Promise.all([
-    Asset.loadAsync(require('./assets/tfjs_model/group1-shard1of5.bin')),
-    Asset.loadAsync(require('./assets/tfjs_model/group1-shard2of5.bin')),
-    Asset.loadAsync(require('./assets/tfjs_model/group1-shard3of5.bin')),
-    Asset.loadAsync(require('./assets/tfjs_model/group1-shard4of5.bin')),
-    Asset.loadAsync(require('./assets/tfjs_model/group1-shard5of5.bin')),
-  ]);
-
-  const arrayBuffers = await Promise.all(
-    assets.map((asset) => FileSystem.readAsStringAsync(asset.localUri, { encoding: FileSystem.EncodingType.Base64 }))
-  );
-
-  return arrayBuffers.map((base64Data) => base64js.toByteArray(base64Data).buffer);
-};
-
-
-const mergeWeights = (weightsBuffers) => {
-  const totalBytes = weightsBuffers.reduce((acc, arr) => acc + arr.byteLength, 0);
-  const combinedWeights = new Uint8Array(totalBytes);
-  let offset = 0;
-  weightsBuffers.forEach((buffer) => {
-    combinedWeights.set(new Uint8Array(buffer), offset);
-    offset += buffer.byteLength;
-  });
-  return combinedWeights.buffer;
-};
-
-
-const RecognizerScreen = () => {
-  const [isTfReady, setIsTfReady] = useState(false);
-  const [model, setModel] = useState(null);
+export default function RecognizerScreen() {
+  const navigation = useNavigation();
+  const [hasPermission, setHasPermission] = useState(null);
   const [cameraRef, setCameraRef] = useState(null);
-  const [isCameraReady, setIsCameraReady] = useState(false);
+  const [plantResult, setPlantResult] = useState('Capture an image to predict the plant');
+  const [model, setModel] = useState(null);
+  const [loadingModel, setLoadingModel] = useState(true);
 
-  useEffect(() => {
-    const init = async () => {
-      await tf.ready();
-      setIsTfReady(true);
-  
-      const modelJson = require('./assets/tfjs_model/model.json');
-      
-      const modelWeightsBuffers = await loadWeightsBuffers(); // Load the weights buffers
-  
-      const combinedWeights = mergeWeights(modelWeightsBuffers);
-  
-      const model = await tf.loadLayersModel(bundleResourceIO(modelJson, combinedWeights));
-      setModel(model);
-    };
-    init();
-  }, []);
+  class L2 {
 
+    static className = 'L2';
 
-  const takePicture = async () => {
-    if (cameraRef) {
-      const photo = await cameraRef.takePictureAsync({
-        base64: true,
-        quality: 0.8,
-      });
-  
-      const rawImageData = base64.toByteArray(photo.base64);
-      const { width, height, data } = jpeg.decode({ data: rawImageData, format: 'RGBA' }, { useTArray: true });
-      const imageTensor = tf.browser.fromPixels({ data, width, height, numChannels: 4 }, 4);
-      const resizedTensor = tf.image.resizeBilinear(imageTensor, [224, 224]);
-      const processedTensor = resizedTensor.slice([0, 0, 0], [-1, -1, 3]).expandDims(0);
-  
-      if (model) {
-        const prediction = model.predict(processedTensor);
-        // Process the prediction and display the result
-      }
+    constructor(config) {
+       return tf.regularizers.l1l2(config)
     }
-  };
+}
 
-  if (!isTfReady) {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={{ fontSize: 24 }}>Loading TensorFlow.js</Text>
-      </View>
-    );
+tf.serialization.registerClass(L2);
+useEffect(() => {
+  (async () => {
+    const { status } = await Camera.requestCameraPermissionsAsync();
+    setHasPermission(status === 'granted');
+
+    // Initialize TensorFlow.js
+    await tf.ready();
+    console.log('TensorFlow ready:', tf.version.tfjs);
+
+    // Load the model
+    const modelJson = require('./assets/tfjs_model/model.json');
+    const modelWeight = require('./assets/tfjs_model/group1-shard.bin');
+    const loadedModel = await tf.loadLayersModel(bundleResourceIO(modelJson, modelWeight));
+    setModel(loadedModel);
+    setLoadingModel(false);
+    Alert.alert('Model is ready!', 'You can now capture an image for prediction.');
+  })();
+}, []);
+
+
+  if (hasPermission === null) {
+    return <View />;
+  }
+  if (hasPermission === false) {
+    return <Text>No access to camera</Text>;
   }
 
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ fontSize: 24 }}>Recognizer Screen</Text>
-      <Camera
-        style={{ flex: 1, width: '100%' }}
-        type={Camera.Constants.Type.back}
-        autoFocus={Camera.Constants.AutoFocus.on}
-        onCameraReady={() => {
-          console.log('Camera ready');
-          setIsCameraReady(true); // Update camera ready state
-        }}
-        ref={(ref) => setCameraRef(ref)}
-      />
-      <TouchableOpacity onPress={takePicture} style={{ alignSelf: 'center', marginBottom: 20 }}>
-        <Text style={{ fontSize: 20, color: 'white' }}>Take Picture</Text>
-      </TouchableOpacity>
-    </View>
-  );
+  
+  const imageToTensor = (rawImageData) => {
+  const { width, height, data } = jpeg.decode(rawImageData, true);
+  const buffer = new Float32Array(width * height * 3);
+  let offset = 0;
+
+  for (let i = 0; i < buffer.length; i += 3) {
+    buffer[i] = (data[offset] / 127.5) - 1;
+    buffer[i + 1] = (data[offset + 1] / 127.5) - 1;
+    buffer[i + 2] = (data[offset + 2] / 127.5) - 1;
+    offset += 4;
+  }
+
+  return tf.tensor3d(buffer, [height, width, 3]);
 };
 
-export default RecognizerScreen;
+
+  const plantClasses = ['Lavender', 'Coleus', 'Lagerstroemia Lipan', 'Cantaurea', 'Lucky Nut'];
+  const captureAndPredict = async () => {
+    if (cameraRef && model) {
+      console.log('Model is loaded');
+      const photo = await cameraRef.takePictureAsync({ base64: true });
+      const resizedPhoto = await ImageManipulator.manipulateAsync(
+        photo.uri,
+        [{ resize: { width: 224, height: 224 } }],
+        { format: ImageManipulator.SaveFormat.JPEG, base64: true }
+      );
+      const rawImageData = Buffer.Buffer.from(resizedPhoto.base64, 'base64');
+      const imageTensor = imageToTensor(rawImageData);
+      const resizedImageTensor = tf.image.resizeBilinear(imageTensor, [224, 224]);
+      const batchedImageTensor = tf.stack([resizedImageTensor]);
+      const prediction = await model.predict(batchedImageTensor).data();
+      const plantClassIndex = prediction.indexOf(Math.max(...prediction));
+      const plantProbability = (prediction[plantClassIndex] * 100).toFixed(0); // Get the probability in percentage
+      plantClasses.forEach((className, index) => {
+        console.log(`${className}: ${prediction[index] * 100}%`);
+      });
+
+      console.log(plantClasses[plantClassIndex]);
+
+      navigation.navigate('PlantInfo', { plantClass: plantClasses[plantClassIndex], plantProbability, photoURI: resizedPhoto.uri }); // Pass the probability and photoURI
+    } else {
+      console.log('Model is not loaded yet');
+    }
+  };
+  
+
+
+  return (
+    <View style={styles.container}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={loadingModel}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Loading model...</Text>
+            <ActivityIndicator size="large" color="#0000ff" />
+          </View>
+        </View>
+      </Modal>
+      <Camera style={styles.camera} ref={(ref) => setCameraRef(ref)} />
+      <View style={styles.buttonContainer}>
+      <TouchableOpacity
+        onPress={captureAndPredict}
+        style={styles.captureButton}
+      >
+          <Text style={styles.text}>Capture and Predict</Text>
+        </TouchableOpacity>
+      </View>
+      <Text style={styles.resultText}>{plantResult}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  camera: {
+    flex: 3,
+  },
+  buttonContainer: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    margin: 20,
+    justifyContent: 'center',
+  },
+  captureButton: {
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Change the background color to make the button more visible
+    padding: 10,
+    borderRadius: 50, // Updated to make the button circular
+    borderWidth: 2, // Add a border
+    borderColor: 'white', // Set the border color to white
+    margin: 10,
+  },
+  text: {
+    fontSize: 18,
+    color: 'white',
+  },
+  resultText: {
+    fontSize: 16,
+    color: 'black',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: 'center',
+    fontSize: 18,
+  },
+});

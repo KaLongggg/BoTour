@@ -6,6 +6,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Ionicons } from '@expo/vector-icons';
+import * as tf from '@tensorflow/tfjs-react-native';
+
 
 // Import screens here
 import HomePage from './HomePage';
@@ -19,6 +21,7 @@ import CollectionScreen from './CollectionScreen';
 import ToursScreen from './ToursScreen';
 import HoursandLocationScreen from './HoursandLocationScreen';
 import AboutScreen from './AboutScreen';
+import PlantInfoScreen from './PlantInfoScreen';
 
 const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -83,6 +86,8 @@ function MainStackNavigator() {
       <Stack.Screen name="Tours" component={ToursScreen} />
       <Stack.Screen name="Hours and Location" component={HoursandLocationScreen} />
       <Stack.Screen name="About" component={AboutScreen} />
+      <Stack.Screen name="PlantInfo" component={PlantInfoScreen} />
+  
     </Stack.Navigator>
   );
 }
