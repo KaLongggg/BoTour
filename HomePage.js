@@ -14,12 +14,12 @@ const gridImages = [
     onPress: (navigation) => navigation.navigate('Tours'),
   },  
   {
-    title: "What's on",
+    // title: "What's on",
     source: require('./assets/HomePage/whatson.jpg'),
     onPress: (navigation) => navigation.navigate("What's On?")
   },
   {
-    title: 'Recognizer',
+    // title: 'Recognizer',
     source: require('./assets/HomePage/camera.jpg'),
     onPress: (navigation) => navigation.navigate("Recognizer")
   },
@@ -172,8 +172,8 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
   gridImage: {
-    width: '100%',
-    height: '90%',
+    width: '95%',
+    height: '85%',
     resizeMode: 'cover',
     borderRadius: 10,
   },

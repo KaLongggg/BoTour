@@ -1,26 +1,39 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, Linking } from 'react-native';
 
 const About = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.header}>About Us</Text>
-      <Text style={styles.paragraph}>
-        Set on 27 hectares at the foot of Mount Keira, Wollngong Botanic garden is a short distance from 
-        the City Central, and next to the University of Wollngong's main campus. We are located approximately 85 
-        kilometres south of Sydney.
+      <Image source={require("./assets/about.png")} style={{ width: "100%", height: 200 }} />
+
+      <Text style={styles.heading}>Wollongong Botanic Garden</Text>
+
+      <Text style={styles.text}>
+        Set on 27 hectares at the foot of Mount Keira, Wollongong Botanic Garden is a short distance from the City Centre, and next to the University of Wollongong's main campus. We are located approximately 85 kilometres south of Sydney.
       </Text>
-      <Text style={styles.paragraph}>
-        Our mission is to empower businesses with innovative and efficient
-        software solutions, helping them achieve their goals and stay ahead of
-        the competition. We strive for excellence in everything we do and
-        always put our customers first.
+
+      <Image source={require("./assets/garden1.png")} style={styles.image} />
+
+      <Text style={styles.subheading}>Garden Features</Text>
+
+      <Text style={styles.text}>
+        The Garden features a diverse range of native and exotic plant species, including the Rose Garden, Woodland Garden, Palm Garden, Rainforest Collection, and the Dryland Garden. The Garden is also home to a variety of wildlife such as birds, butterflies, and reptiles.
       </Text>
-      <Text style={styles.paragraph}>
-        If you have any questions or would like to learn more about our
-        services, please feel free to contact us. We'd be more than happy to
-        assist you.
+
+      <Image source={require("./assets/garden2.png")} style={styles.image} />
+
+      <Text style={styles.subheading}>Activities and Events</Text>
+
+      <Text style={styles.text}>
+        Wollongong Botanic Garden offers a range of activities and events for visitors of all ages. These include guided walks, workshops, and special events like the popular Spring Festival and Sunset Cinema series.
       </Text>
+
+      <Text style={styles.link} onPress={() => Linking.openURL('https://wollongongbotanicgarden.com.au/events')}>
+        Visit our events page for more details
+      </Text>
+
+      <Image source={require("./assets/garden3.png")} style={styles.image} />
+
     </ScrollView>
   );
 };
@@ -43,14 +56,22 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   text: {
-    fontSize: 16,
+    fontSize: 18,
     lineHeight: 24,
+    marginTop: 10
   },
   link: {
     fontSize: 16,
     color: 'blue',
     textDecorationLine: 'underline',
     marginTop: 8,
+  },
+  image: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'cover',
+    marginTop: 16,
+    marginBottom: 16,
   },
 });
 

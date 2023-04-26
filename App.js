@@ -21,6 +21,9 @@ import CollectionScreen from './CollectionScreen';
 import ToursScreen from './ToursScreen';
 import HoursandLocationScreen from './HoursandLocationScreen';
 import AboutScreen from './AboutScreen';
+import PlantSales from './Sub_WhatsOnScreen/PlantSales';
+import BotanicGardensDay from './Sub_WhatsOnScreen/BotanicGardensDay';
+import Anniversary from './Sub_WhatsOnScreen/Anniversary';
 import PlantInfoScreen from './PlantInfoScreen';
 
 const BottomTab = createBottomTabNavigator();
@@ -35,8 +38,8 @@ function BottomTabNavigator() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === 'More') {
-            iconName = focused ? 'ios-menu' : 'ios-menu-outline';
+          if (route.name === 'Home') {
+            iconName = focused ? 'ios-home' : 'ios-home-outline';
           } else if (route.name === 'Recognizer') {
             iconName = focused ? 'ios-camera' : 'ios-camera-outline';
           } else if (route.name === 'Map') {
@@ -47,7 +50,7 @@ function BottomTabNavigator() {
             iconName = focused ? 'ios-heart' : 'ios-heart-outline';
           }
 
-          return <Ionicons name={iconName} size={35} color={color} />;
+          return <Ionicons name={iconName} size={30} color={color} />;
         },
         tabBarLabel: ({ focused, color }) => {
           return <Text style={{ fontSize: 15, color: focused ? 'blue' : 'gray' }}>{route.name}</Text>;
@@ -61,7 +64,7 @@ function BottomTabNavigator() {
       })}
     >
       {/* <BottomTab.Screen name="Home" component={(props) => <HomePage {...props} />} /> */}
-      <BottomTab.Screen name="More" component={HomePage} />
+      <BottomTab.Screen name="Home" component={HomePage} />
       <BottomTab.Screen name="Recognizer" component={RecognizerScreen} />
       <BottomTab.Screen name="Map" component={MapScreen} />
       <BottomTab.Screen name="Search" component={SearchScreen} />
@@ -86,6 +89,9 @@ function MainStackNavigator() {
       <Stack.Screen name="Tours" component={ToursScreen} />
       <Stack.Screen name="Hours and Location" component={HoursandLocationScreen} />
       <Stack.Screen name="About" component={AboutScreen} />
+      <Stack.Screen name="PlantSales" component={PlantSales} />
+      <Stack.Screen name="BotanicGardensDay" component={BotanicGardensDay} />
+      <Stack.Screen name="Anniversary" component={Anniversary} /> 
       <Stack.Screen name="PlantInfo" component={PlantInfoScreen} />
   
     </Stack.Navigator>
@@ -100,9 +106,28 @@ export default function App() {
         drawerContent={(props) => <SideMenu {...props} />}
         screenOptions={({ route }) => ({
           headerTitle: route.name,
-        })}
+          headerStyle: {
+            backgroundColor: '#5F8575',
+            height: 120,
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+      fontWeight: 'bold'
+    }
+  })}
       >
-        <Drawer.Screen name="BoTour" component={MainStackNavigator} />
+        <Drawer.Screen 
+          name="BoTour" 
+          component={MainStackNavigator} 
+          options={{
+            drawerIcon: ({ focused, size }) => (
+              <Entypo 
+                name="menu" 
+                size={size + 20}  
+              />
+            ),
+          }}
+        />
       </Drawer.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
