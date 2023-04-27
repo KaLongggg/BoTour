@@ -14,7 +14,7 @@ import HomePage from './HomePage';
 import RecognizerScreen from './RecognizerScreen';
 import MapScreen from './MapScreen';
 import SearchScreen from './SearchScreen';
-import FavoriteScreen from './FavoriteScreen';
+import Favorite from './FavoriteScreen';
 import SideMenu from './SideMenu';
 import WhatsOnScreen from './WhatsOnScreen';
 import CollectionScreen from './CollectionScreen';
@@ -70,7 +70,7 @@ function BottomTabNavigator() {
       <BottomTab.Screen name="Recognizer" component={RecognizerScreen} />
       <BottomTab.Screen name="Map" component={MapScreen} />
       <BottomTab.Screen name="Search" component={SearchScreen} />
-      <BottomTab.Screen name="Favorite" component={FavoriteScreen} />
+      <BottomTab.Screen name="Favorite" component={Favorite} />
       
     </BottomTab.Navigator>
   );

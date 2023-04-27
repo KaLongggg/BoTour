@@ -8,6 +8,7 @@ import * as Buffer from 'buffer';
 import "@tensorflow/tfjs-react-native";
 import * as ImageManipulator from 'expo-image-manipulator';
 import { useNavigation } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
 
 const navigateToPlantInfo = (navigation, plantClass, plantProbability, resizedPhotoUri) => {
   navigation.navigate('PlantInfo', { plantClass, plantProbability, photoURI: resizedPhotoUri });
@@ -17,7 +18,7 @@ export default function RecognizerScreen() {
   const navigation = useNavigation();
   const [hasPermission, setHasPermission] = useState(null);
   const [cameraRef, setCameraRef] = useState(null);
-  const [plantResult, setPlantResult] = useState('Capture an image to predict the plant');
+  const [plantResult, setPlantResult] = useState('Capture an image to recognize the plant');
   const [model, setModel] = useState(null);
   const [loadingModel, setLoadingModel] = useState(true);
 
@@ -142,7 +143,7 @@ useEffect(() => {
         onPress={captureAndPredict}
         style={styles.captureButton}
       >
-          <Text style={styles.text}>Capture and Predict</Text>
+          <Ionicons name="md-camera-outline" size={44} color="black" />
         </TouchableOpacity>
       </View>
       <Text style={styles.resultText}>{plantResult}</Text>
@@ -167,12 +168,12 @@ const styles = StyleSheet.create({
   captureButton: {
     alignSelf: 'flex-end',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Change the background color to make the button more visible
+    backgroundColor: 'rgba(0, 0, 0, 0.1)', // Change the background color to make the button more visible
     padding: 10,
     borderRadius: 50, // Updated to make the button circular
     borderWidth: 2, // Add a border
-    borderColor: 'white', // Set the border color to white
-    margin: 10,
+    borderColor: 'black', // Set the border color to white
+    margin: 20,
   },
   text: {
     fontSize: 18,

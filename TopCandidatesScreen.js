@@ -41,6 +41,9 @@ export default function TopCandidatesScreen({ route }) {
         renderItem={renderItem}
         keyExtractor={(item, index) => index.toString()}
       />
+      <Text>
+      Click to see the information about the plant
+      </Text>
     </View>
   );
 }
