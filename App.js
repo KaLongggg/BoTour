@@ -25,6 +25,8 @@ import PlantSales from './Sub_WhatsOnScreen/PlantSales';
 import BotanicGardensDay from './Sub_WhatsOnScreen/BotanicGardensDay';
 import Anniversary from './Sub_WhatsOnScreen/Anniversary';
 import PlantInfoScreen from './PlantInfoScreen';
+import TopCandidatesScreen from './TopCandidatesScreen';
+import CapturedImage from './CapturedImage';
 
 const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -92,7 +94,9 @@ function MainStackNavigator() {
       <Stack.Screen name="PlantSales" component={PlantSales} />
       <Stack.Screen name="BotanicGardensDay" component={BotanicGardensDay} />
       <Stack.Screen name="Anniversary" component={Anniversary} /> 
+      <Stack.Screen name="TopCandidates" component={TopCandidatesScreen} />
       <Stack.Screen name="PlantInfo" component={PlantInfoScreen} />
+      <Stack.Screen name="CapturedImage" component={CapturedImage} options={{ title: 'Captured Image' }} />
   
     </Stack.Navigator>
   );

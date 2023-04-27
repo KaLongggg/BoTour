@@ -9,6 +9,10 @@ import "@tensorflow/tfjs-react-native";
 import * as ImageManipulator from 'expo-image-manipulator';
 import { useNavigation } from '@react-navigation/native';
 
+const navigateToPlantInfo = (navigation, plantClass, plantProbability, resizedPhotoUri) => {
+  navigation.navigate('PlantInfo', { plantClass, plantProbability, photoURI: resizedPhotoUri });
+};
+
 export default function RecognizerScreen() {
   const navigation = useNavigation();
   const [hasPermission, setHasPermission] = useState(null);
@@ -94,7 +98,20 @@ useEffect(() => {
 
       console.log(plantClasses[plantClassIndex]);
 
-      navigation.navigate('PlantInfo', { plantClass: plantClasses[plantClassIndex], plantProbability, photoURI: resizedPhoto.uri }); // Pass the probability and photoURI
+      if (plantProbability > 80) {
+        navigateToPlantInfo(navigation, plantClasses[plantClassIndex], plantProbability, resizedPhoto.uri);
+      } else {
+        const topCandidates = Array.from(prediction)
+          .map((prob, index) => ({ plantClass: plantClasses[index], probability: prob }))
+          .filter((item) => item.probability > 0.05)
+          .sort((a, b) => b.probability - a.probability);
+        const serializableTopCandidates = topCandidates.map((candidate) => ({
+          plantClass: candidate.plantClass,
+          probability: candidate.probability,
+          }));
+        navigation.navigate('TopCandidates', { topCandidates, photoURI: resizedPhoto.uri });
+      }
+
     } else {
       console.log('Model is not loaded yet');
     }
