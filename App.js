@@ -64,7 +64,7 @@ function BottomTabNavigator() {
       })}
     >
       {/* <BottomTab.Screen name="Home" component={(props) => <HomePage {...props} />} /> */}
-      <BottomTab.Screen name="Home" component={HomePage} />
+      <BottomTab.Screen name="Home" component={HomePage} options={{ headerShown: false}}/>
       <BottomTab.Screen name="Recognizer" component={RecognizerScreen} />
       <BottomTab.Screen name="Map" component={MapScreen} />
       <BottomTab.Screen name="Search" component={SearchScreen} />
