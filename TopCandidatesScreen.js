@@ -3,12 +3,20 @@ import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image } from 'react
 import { useNavigation } from '@react-navigation/native';
 
 const plantImages = {
-    Lavender: require('./assets/PlantImage/lavender.jpg'),
-    Coleus: require('./assets/PlantImage/coleus.jpg'),
-    Lagerstroemia_Lipan: require('./assets/PlantImage/lagerstroemia_lipan.jpg'),
-    Cantaurea: require('./assets/PlantImage/cantaurea.jpg'),
-    Lucky_Nut: require('./assets/PlantImage/lucky_nut.jpg'),
-  };
+  Lavender: require('./assets/PlantImage/lavender.jpg'),
+  Coleus: require('./assets/PlantImage/coleus.jpg'),
+  Lagerstroemia_Lipan: require('./assets/PlantImage/lagerstroemia_lipan.jpg'),
+  Cantaurea: require('./assets/PlantImage/cantaurea.jpg'),
+  Lucky_Nut: require('./assets/PlantImage/lucky_nut.jpg'),
+  Aloe_Cameronii: require('./assets/PlantImage/aloe_cameronii.jpg'),
+  Aloe_Maculata: require('./assets/PlantImage/aloe_maculata.jpg'),
+  Camellia: require('./assets/PlantImage/camellia.jpg'),
+  Dracaena_Draco: require('./assets/PlantImage/dracaena_draco.jpg'),
+  Hibiscus: require('./assets/PlantImage/hibiscus.jpg'),
+  Salvia: require('./assets/PlantImage/salvia.jpg'),
+  Sandburs: require('./assets/PlantImage/sandburs.jpg'),
+};
+
 
 export const getPlantImageURI = (plantClass) => {
     const formattedPlantClass = plantClass.replace(' ', '_');
