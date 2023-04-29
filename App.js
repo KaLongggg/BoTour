@@ -86,7 +86,7 @@ function MainStackNavigator() {
     >
       
       <Stack.Screen name="Main" component={BottomTabNavigator} />
-      <Stack.Screen name="What's On?" component={WhatsOnScreen} />
+      <Stack.Screen name="What's On?" component={WhatsOnScreen} options={{ title: "What's On", headerStyle: { backgroundColor: '#5F8575' }, headerTintColor: '#fff',}} />
       <Stack.Screen name="Collection" component={CollectionScreen} />
       <Stack.Screen name="Tours" component={ToursScreen} />
       <Stack.Screen name="Hours and Location" component={HoursandLocationScreen} />

@@ -80,7 +80,7 @@ function SideMenu(props) {
         label=""
         style={drawerItemStyle}
         onPress={() => 
-          Linking.openURL('https://www.youtube.com/channel/UCe0yl5iYHl5VqNogb6fN9QQ')}
+          Linking.openURL('https://www.youtube.com/@wollongongbotanicgarden8728')}
       />
       <DrawerItem
         icon={({ color, size }) => (
