@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    textAlign: 'left',
+    textAlign: 'justify',
     paddingHorizontal: 20,
   },
   heading: {

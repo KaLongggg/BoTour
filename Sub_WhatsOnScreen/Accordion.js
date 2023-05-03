@@ -46,6 +46,11 @@ const styles = StyleSheet.create({
   content: {
     paddingRight:0,
   },
-});
+  justifyText: {
+    textAlign: 'justify',
+    paddingHorizontal: 30,
+    paddingBottom: 10,  
+  },
+})
 
 export default Accordion;

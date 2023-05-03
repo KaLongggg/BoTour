@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 18,
     lineHeight: 24,
-    marginTop: 10
+    marginTop: 10,
+    textAlign: 'justify',
   },
   link: {
     fontSize: 16,

@@ -19,7 +19,7 @@ const PlantSales = () => {
           {'\n'}{'\n'}
           Our expert horticulturalists are on hand at each sale to help with advice about plant selection for your garden.
           {'\n'}{'\n'}
-          <Text style={{fontWeight: 'bold'}}>Please note:</Text> 
+          <Text style={{fontWeight: 'bold'}}>Please note: </Text> 
           this Plant Sale is only open to residents of the Wollongong City Council area. Refer to 'Payment methods' below for more detail.
           
           
@@ -30,155 +30,175 @@ const PlantSales = () => {
 
           {'\n'}{'\n'}
           <Text style={styles.heading}>Upcoming Sales</Text>{'\n'}
-          Our next plant sales are shown in {'\b'}
+          Our next plant sales are shown in{'\b'}
             <Text
               style={{ textDecorationLine: 'underline' }}
               onPress={() => Linking.openURL('https://wollongongbotanicgarden.com.au/events/calendar')}
             >
-            our calendar
+            our calendar. {"\n"}{"\n"}
             </Text>
-            <Text>{"\n"}{"\n"}</Text>
             
-            <Accordion title="Available plants" >
-              <Text>
-                Below is the plant list for 21 April 2023. This list is updated a few days prior to each sale.
+            <Accordion title="Available plants" >{'\n'}
+              <Text style={styles.justifyText}>Below is the plant list for 21 April 2023. This list is updated a few days prior to each sale.{'\n'}{'\n'}
+                Plants are listed with their scientific name in italics, followed by the common name in brackets.{'\n'}{'\n'}
 
-                Plants are listed with their scientific name in italics, followed by the common name in brackets.
+                <Text style={{fontWeight: 'bold'}}>Illawarra Local Native Species </Text>{'\n'}
+                ・	Acmena smithii var. minor (Dwarf Lilly Pilly){'\n'}
+                ・	Adiantum spp. (Maidenhair Fern){'\n'}
+                ・	Alocasia bribanensis (Cunjevoi){'\n'}
+                ・	Alpinia caerulea (Native Ginger){'\n'}
+                ・	Asplenium bulbiferum (Hen and Chicken Fern){'\n'}
+                ・	Bacopa{'\n'}
+                ・	Baeckia imbricata (Heath Myrtle){'\n'}
+                ・	Banksia integrifolia (Coast Banksia){'\n'}
+                ・	Banksia robur (Swamp Banksia){'\n'}
+                ・	Brachychiton acerifolius (Illawarra Flame Tree){'\n'}
+                ・	Brachyscome angustifolia (Grass Daisy){'\n'}
+                ・	Brachyscome multifida (Rock Daisy){'\n'}
+                ・	Carex appressa (Tall Sedge){'\n'}
+                ・	Carex brunnea (Greater Brown Sedge){'\n'}
+                ・	Carpobrotus glaucescens (Native Pig Face){'\n'}
+                ・	Chrysocephalum apiculatum (Yellow Buttons){'\n'}
+                ・	Citriobatus pauciflorus (Native Orange Thorn){'\n'}
+                ・	Coprosma (Prickley Current Bush){'\n'}
+                ・	Cryptocarya microneura (Murrogun){'\n'}
+                ・	Cymbopogon refractus (Barb Wire Grass){'\n'}
+                ・	Deeringia amaranthoides (Shrubby Deeringia){'\n'}
+                ・	Dianella caerulea (Blue Flax-lily){'\n'}
+                ・	Dianella congesta (Beach Flax Lily){'\n'}
+                ・	Dodonaea triquetra (Large Leaf Hop Bush){'\n'}
+                ・	Dodonaea viscosa (Hop Bush){'\n'}
+                ・	Echinopogon caespitosus (Tufted Hedgehog Grass){'\n'}
+                ・	Emmenosperma alphitonioidoes (Yellow Ash){'\n'}
+                ・	Ehretia acuminata (Koda){'\n'}
+                ・	Eupomatia laurina (Bolwarra){'\n'}
+                ・	Ficinia / Isolepsis nodosa (Knobby Club-rush){'\n'}
+                ・	Ficus marcrophylla (Moreton Bay Fig){'\n'}
+                ・	Ficus superba (Deciduous Fig){'\n'}
+                ・	Gahnia sieberiana (Red-fruit Saw-sedge){'\n'}
+                ・	Glochidion ferdinandi (Cheese Tree){'\n'}
+                ・	Goodia lotifolia (Golden Tip){'\n'}
+                ・	Goodenia ovata-prostrate form (Hop Goodenia){'\n'}
+                ・	Guioa semiglauca (Guioa){'\n'}
+                ・	Hardenbergia violacea (Purple Coral Pea){'\n'}
+                ・	Hibbertia aspera (Rough Guinea Flower){'\n'}
+                ・	Hibbertia obtusifolia (Hoary Guinea Flower){'\n'}
+                ・	Indigofera australis (Native Indigo){'\n'}
+                ・	Juncus kraussii (Sea Rush){'\n'}
+                ・	Kennedia rubicunda (Dusky Coral Pea){'\n'}
+                ・	Kunzea ambigua (White Kunzea){'\n'}
+                ・	Libertia paniculata (Branching Grass-Flag){'\n'}
+                ・	Lomandra longifolia (Spiny-headed Mat-rush){'\n'}
+                ・	Maclura cochinchinensis (Cockspur Thorn){'\n'}
+                ・	Melaleuca hypericifolia (Hillock Bush){'\n'}
+                ・	Melaleuca styphelioides (Prickly Paperbark){'\n'}
+                ・	Melia azedarach (White Cedar){'\n'}
+                ・	Meliocope micrococca (White Euodia){'\n'}
+                ・	Olearia microphylla (Small-leaved Daisy Bush){'\n'}
+                ・	Olearia tomentosa (Toothed Daisy-bush){'\n'}
+                ・	Olearia viscidula (Viscid Daisy Bush){'\n'}
+                ・	Ozothamnus diosmifolius (Rice Flower){'\n'}
+                ・	Pellaea falcata (Sickle Fern){'\n'}
+                ・	Pennisetum alopecuroides (Swamp Foxtail Grass){'\n'}
+                ・	Peperomia blanda var. floribunda (Pepperomia){'\n'}
+                ・	Pittosporum multiflorum (Orange Thorn){'\n'}
+                ・	Pittosporum revolutum (Wild Yellow Jasmine){'\n'}
+                ・	Platysace lanceolata (Shrubby Platysace){'\n'}
+                ・	Plectranthus graveolens (Bush Basil){'\n'}
+                ・	Podocarpus elatus (Plum Pine){'\n'}
+                ・	Pollia crispata (Pollia){'\n'}
+                ・	Pollia crispata dwarf (Dwarf Pollia){'\n'}
+                ・	Polyscias elegans (Celery Wood){'\n'}
+                ・	Polyscias murrayi (Pencil Cedar){'\n'}
+                ・	Pratia pedunculata (Matted Pratia){'\n'}
+                ・	Prostanthera incisa var. sieberi (Cut-leaf Mintbush){'\n'}
+                ・	Prostanthera lasianthos (Victorian Christmas Bush){'\n'}
+                ・	Prostanthera nivea (Snowy Mint Bush){'\n'}
+                ・	Prostanthera ovalifolia (Oval-leaf Mintbush){'\n'}
+                ・	Rhagodia candolleana (Coastal Salt Bush){'\n'}
+                ・	Sambucus australasica (Native Elderberry){'\n'}
+                ・	Scaevola aemulea (Purple Fan Flower){'\n'}
+                ・	Schelhammera undulata (Lilac Lily){'\n'}
+                ・	Scolopia braunii (Flintwood){'\n'}
+                ・	Sorghum leiocladum (Wild Sorghum){'\n'}
+                ・	Stenocarpus salignus (Scrub Beefwood){'\n'}
+                ・	Stipa ramossima (Stout Bamboo Grass){'\n'}
+                ・	Synoum glandulosum (Scentless Rosewood){'\n'}
+                ・	Todea (King Fern){'\n'}
+                ・	Toona ciliata (Red Cedar){'\n'}
+                ・	Tristania nerifolia (Water Gum){'\n'}
+                ・	Trochocarpa laurina (Tree Heath){'\n'}
+                ・	Viola hederacea (Native Violet){'\n'}
+                ・	Westringia fruticosa (Coastal Rosemary){'\n'}
+                ・	Westringia longifolia (Long-leaved Westringia){'\n'}
+                ・	Wilkiea huegeliana (Veiny Wilkiea){'\n'}
+                ・	Zieria smithii (Sandfly Zieria){'\n'}{'\n'}
 
-                Illawarra Local Native Species
-                Acacia stricta (Hop Wattle)
-                Acmena smithii var. minor (Dwarf Lilly Pilly)
-                Adiantum spp. (Maidenhair Fern)
-                Alocasia bribanensis (Cunjevoi)
-                Alpinia caerulea (Native Ginger)
-                Asplenium bulbiferum (Hen and Chicken Fern)
-                Bacopa
-                Baeckia imbricata (Heath Myrtle)
-                Banksia integrifolia (Coast Banksia)
-                Banksia robur (Swamp Banksia)
-                Brachychiton acerifolius (Illawarra Flame Tree)
-                Brachyscome angustifolia (Grass Daisy)
-                Brachyscome multifida (Rock Daisy)
-                Carex appressa (Tall Sedge)
-                Carex brunnea (Greater Brown Sedge)
-                Carpobrotus glaucescens (Native Pig Face)
-                Chrysocephalum apiculatum (Yellow Buttons)
-                Citriobatus pauciflorus (Native Orange Thorn)
-                Coprosma (Prickley Current Bush)
-                Cryptocarya microneura (Murrogun)
-                Cymbopogon refractus (Barb Wire Grass)
-                Deeringia amaranthoides (Shrubby Deeringia)
-                Dianella caerulea (Blue Flax-lily)
-                Dianella congesta (Beach Flax Lily)
-                Dodonaea triquetra (Large Leaf Hop Bush)
-                Dodonaea viscosa (Hop Bush)
-                Echinopogon caespitosus (Tufted Hedgehog Grass)
-                Emmenosperma alphitonioidoes (Yellow Ash)
-                Ehretia acuminata (Koda)
-                Eupomatia laurina (Bolwarra)
-                Ficinia / Isolepsis nodosa (Knobby Club-rush)
-                Ficus marcrophylla (Moreton Bay Fig)
-                Ficus superba (Deciduous Fig)
-                Gahnia sieberiana (Red-fruit Saw-sedge)
-                Glochidion ferdinandi (Cheese Tree)
-                Goodia lotifolia (Golden Tip)
-                Goodenia ovata-prostrate form (Hop Goodenia)
-                Guioa semiglauca (Guioa)
-                Hardenbergia violacea (Purple Coral Pea)
-                Hibbertia aspera (Rough Guinea Flower)
-                Hibbertia obtusifolia (Hoary Guinea Flower)
-                Indigofera australis (Native Indigo)
-                Juncus kraussii (Sea Rush)
-                Kennedia rubicunda (Dusky Coral Pea)
-                Kunzea ambigua (White Kunzea)
-                Libertia paniculata (Branching Grass-Flag)
-                Lomandra longifolia (Spiny-headed Mat-rush)
-                Maclura cochinchinensis (Cockspur Thorn)
-                Melaleuca hypericifolia (Hillock Bush)
-                Melaleuca styphelioides (Prickly Paperbark)
-                Melia azedarach (White Cedar)
-                Meliocope micrococca (White Euodia)
-                Olearia microphylla (Small-leaved Daisy Bush)
-                Olearia tomentosa (Toothed Daisy-bush)
-                Olearia viscidula (Viscid Daisy Bush)
-                Ozothamnus diosmifolius (Rice Flower)
-                Pellaea falcata (Sickle Fern)
-                Pennisetum alopecuroides (Swamp Foxtail Grass)
-                Peperomia blanda var. floribunda (Pepperomia)
-                Pittosporum multiflorum (Orange Thorn)
-                Pittosporum revolutum (Wild Yellow Jasmine)
-                Platysace lanceolata (Shrubby Platysace)
-                Plectranthus graveolens (Bush Basil)
-                Podocarpus elatus (Plum Pine)
-                Pollia crispata (Pollia)
-                Pollia crispata dwarf (Dwarf Pollia)
-                Polyscias elegans (Celery Wood)
-                Polyscias murrayi (Pencil Cedar)
-                Pratia pedunculata (Matted Pratia)
-                Prostanthera incisa var. sieberi (Cut-leaf Mintbush)
-                Prostanthera lasianthos (Victorian Christmas Bush)
-                Prostanthera nivea (Snowy Mint Bush)
-                Prostanthera ovalifolia (Oval-leaf Mintbush)
-                Rhagodia candolleana (Coastal Salt Bush)
-                Sambucus australasica (Native Elderberry)
-                Scaevola aemulea (Purple Fan Flower)
-                Schelhammera undulata (Lilac Lily)
-                Scolopia braunii (Flintwood)
-                Sorghum leiocladum (Wild Sorghum)
-                Stenocarpus salignus (Scrub Beefwood)
-                Stipa ramossima (Stout Bamboo Grass)
-                Synoum glandulosum (Scentless Rosewood)
-                Todea (King Fern)
-                Toona ciliata (Red Cedar)
-                Tristania nerifolia (Water Gum)
-                Trochocarpa laurina (Tree Heath)
-                Viola hederacea (Native Violet)
-                Westringia fruticosa (Coastal Rosemary)
-                Westringia longifolia (Long-leaved Westringia)
-                Wilkiea huegeliana (Veiny Wilkiea)
-                Zieria smithii (Sandfly Zieria)
-                Australian Native Species
-                Acacia cognata (Bower Wattle)
-                Acacia cultriformis (Knife-leaf Wattle)
-                Callistemon sp and cultivars (Bottlebrush)
-                Cordyline petiolaris (Broad-leaved Palm Lily)
-                Cordyline stricta (Narrow-leaved Palm Lily)
-                Correa sp. and cultivars (Native Fuschia)
-                Davidsonia jerseyana (Davidson's Plum)
-                Diploglottis campbellii (Small-leaved Tamarind)
-                Elaeocarpus grandis (Blue Quandong)
-                Graptophyllum illicifolium (Mt Blackwood Holly)
-                Grevillea sp and cultivars (Grevillea)
-                Harpullia pendula (Tulipwood)
-                Hypocalymma angustifolium (Pink-flowered Myrtle)
-                Leptospermum sp. and cultivars (Tea Tree)
-                Lomandra hystrix (Green Mat-rush)
-                Lomandra-tanika ('Tankia' Mat Rush)
-                Melaleuca 'Claret Tops' (Honey Myrtle)
-                Myoporum parvifolium (Creeping Boobialla)
-                Patersonia occidentalis (Purple Flag)
-                Philotheca myoporoides (Wax Flower)
-                Pimelia ferruginea (Rice Flower)
-                Pratia puberula (Alpine Pratia)
-                Prostanthera ('Mauve Mantle')
-                Scaevola 'Pink Form' (Fan Flower)
-                Scaevola purple (Fan Flower)
-                Syzygium sp. and cultivars (Lillypilly)
-                Thryptomene saxicola (F. C. Payne)
-                Westringia sp. and cultivars (Coastal Rosemary)
+                <Text style={{fontWeight: 'bold'}}>Australian Native Species</Text>{'\n'}
+                ・	Acacia cognata (Bower Wattle){'\n'}
+                ・	Acacia cultriformis (Knife-leaf Wattle){'\n'}
+                ・	Callistemon sp and cultivars (Bottlebrush){'\n'}
+                ・	Cordyline petiolaris (Broad-leaved Palm Lily){'\n'}
+                ・	Cordyline stricta (Narrow-leaved Palm Lily){'\n'}
+                ・	Correa sp. and cultivars (Native Fuschia){'\n'}
+                ・	Davidsonia jerseyana (Davidson's Plum){'\n'}
+                ・	Diploglottis campbellii (Small-leaved Tamarind){'\n'}
+                ・	Elaeocarpus grandis (Blue Quandong){'\n'}
+                ・	Graptophyllum illicifolium (Mt Blackwood Holly){'\n'}
+                ・	Grevillea sp and cultivars (Grevillea){'\n'}
+                ・	Harpullia pendula (Tulipwood){'\n'}
+                ・	Hypocalymma angustifolium (Pink-flowered Myrtle){'\n'}
+                ・	Leptospermum sp. and cultivars (Tea Tree){'\n'}
+                ・	Lomandra hystrix (Green Mat-rush){'\n'}
+                ・	Lomandra-tanika ('Tankia' Mat Rush){'\n'}
+                ・	Melaleuca 'Claret Tops' (Honey Myrtle){'\n'}
+                ・	Myoporum parvifolium (Creeping Boobialla){'\n'}
+                ・	Patersonia occidentalis (Purple Flag){'\n'}
+                ・	Philotheca myoporoides (Wax Flower){'\n'}
+                ・	Pimelia ferruginea (Rice Flower){'\n'}
+                ・	Pratia puberula (Alpine Pratia){'\n'}
+                ・	Prostanthera ('Mauve Mantle'){'\n'}
+                ・	Scaevola 'Pink Form' (Fan Flower){'\n'}
+                ・	Scaevola purple (Fan Flower){'\n'}
+                ・	Syzygium sp. and cultivars (Lillypilly){'\n'}
+                ・	Thryptomene saxicola (F. C. Payne){'\n'}
+                ・	Westringia sp. and cultivars (Coastal Rosemary)
               </Text>
             </Accordion>
             <Text>{"\n"}</Text>
 
             <Accordion title="Prices">
-              <Text>
-                Current prices for our Native Plant Sales are shown below. Prices include GST.
-              </Text>
+              <Text>{'\n'}Current prices for our Native Plant Sales are shown below. Prices include GST.{'\n'}</Text>
+
+                <View style={styles.tableHeader}>
+                  <Text style={styles.headerText}>Area</Text>
+                  <Text style={styles.headerText}>Fee Name</Text>
+                  <Text style={styles.headerText}>GST</Text>
+                  <Text style={styles.headerText}>Current Fee{"\n"} (incl. GST)</Text>
+                </View>
+                <View style={styles.tableRow}>
+                  <Text style={styles.cellText}>Botanic Garden Nursery</Text>
+                  <Text style={styles.cellText}>Individual Plants 50mm Tube</Text>
+                  <Text style={styles.cellText}>Y</Text>
+                  <Text style={styles.cellText}>$2.40</Text>
+                </View>
+                <View style={styles.tableRow}>
+                  <Text style={styles.cellText}>Botanic Garden Nursery</Text>
+                  <Text style={styles.cellText}>Multiple Plants 50mm Tube >50 plants</Text>
+                  <Text style={styles.cellText}>Y</Text>
+                  <Text style={styles.cellText}>$1.40</Text>
+                </View>
+                <View style={styles.tableRow}>
+                  <Text style={styles.cellText}>Botanic Garden Nursery</Text>
+                  <Text style={styles.cellText}>Individual Plants (70mm) Forest Tube</Text>
+                  <Text style={styles.cellText}>Y</Text>
+                  <Text style={styles.cellText}>$3.20</Text>
+                </View>
             </Accordion>
             <Text>{"\n"}</Text>
 
             <Accordion title="Payment methods">
-              <Text>
+              <Text>{'\n'}
                 You can pay by card (not AMEX) or cheque. Cash is not accepted.{"\n"}{"\n"}
                 Bring your current rates notice as proof that you’re a resident of the Wollongong City Council area to buy plants at these sales
               </Text>
@@ -186,7 +206,7 @@ const PlantSales = () => {
             <Text>{"\n"}</Text>
 
             <Accordion title="Bring back your pots">
-              <Text>
+              <Text>{'\n'}
                 We happily accept the return of pots from any plants you've bought at one of our sales, and we will reuse them.{"\n"}{"\n"}
                 Please note, we don't accept damaged pots or any pots that were bought elsewhere.
               </Text>
@@ -194,7 +214,7 @@ const PlantSales = () => {
             <Text>{"\n"}</Text>
 
             <Accordion title="Plants for schools and commnity organizations">
-              <Text>
+              <Text>{'\n'}
                 Every financial year, not-for-profit primary and secondary schools, and community centres operating on community land in the Wollongong local government area can request up to 30 plants to be donated from the Botanic Garden's Nursery.{"\n"}{"\n"}
 
                 We cannot accommodate requests for specific plants. The donation will include a mixture of native grasses, ground covers, trees and shrubs from our available supplies. If you have a specific plant request, you can purchase plants directly from the nursery as a special order (see 'Purchasing Plants' below) or come along to one of our sale days.{"\n"}{"\n"}
@@ -216,9 +236,8 @@ const PlantSales = () => {
                 If your school or community centre would like to purchase specific plants you can come to an upcoming Plant Sale (dates listed above) or email us with your request for a special order.{"\n"}{"\n"}
 
                 Make sure you include details of the types and quantity of plants you would like. Please note: There may be a limit on what we can provide you, so we will assess your request to order and if applicable, offer you similar alternatives.{"\n"}{"\n"}
-              </Text>
+              </Text>{"\n"}
             </Accordion>
-            <Text>{"\n"}</Text>
 
         
         </Text>  
@@ -248,13 +267,38 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    textAlign: 'left',
+    textAlign: 'justify',
     paddingHorizontal: 20,
   },
   heading: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 8,
+  },
+  tableHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
+    paddingBottom: 5,
+    marginBottom: 5,
+  },
+  tableRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingBottom: 5,
+  },
+  headerText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  cellText: {
+    fontSize: 14,
+    borderWidth: 0.5, // Add border
+    borderColor: 'black', // Set border color
+    width: 90, // Adjust the width of the cell
+    height: 55, // Adjust the height of the cell
+    textAlign: 'center', // Center the text inside the cell
   },
 });
 
