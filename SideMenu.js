@@ -9,96 +9,93 @@ function SideMenu(props) {
   const drawerItemStyle = { marginRight: -50 };
   return (
     <View style={{ flex:  1, }}>
-    <DrawerContentScrollView {...props}>
-      <DrawerItem
-        icon={({ color, size }) => <Ionicons name="ios-home" size={30} color={color} />}
-        label="Home"
-        onPress={() => props.navigation.navigate('Home')}
-        labelStyle={{ fontSize: 17 }}
-      />
-      <DrawerItem
-        icon={({ color, size }) => <Ionicons name="calendar" size={30} color={color} />}
-        label="What's On?"
-        onPress={() => props.navigation.navigate("What's On?")}
-        labelStyle={{ fontSize: 17 }}
-      />
-      <DrawerItem
-        icon={({ color, size }) => (
-          <MaterialIcons name="collections" size={30} color={color} />
-        )}
-        label="Collection"
-        onPress={() => props.navigation.navigate('Collection')}
-        labelStyle={{ fontSize: 17 }}
-      />
-      <DrawerItem
-        icon={({ color, size }) => <Ionicons name="walk" size={30} color={color} />}
-        label="Tours"
-        onPress={() => props.navigation.navigate('Tours')}
-        labelStyle={{ fontSize: 17 }}
-      />
-      <DrawerItem
-        icon={({ color, size }) => <Ionicons name="navigate" size={30} color={color} />}
-        label="Hours and Location"
-        onPress={() => props.navigation.navigate('Hours and Location')}
-        labelStyle={{ fontSize: 17 }}
-      />
-      <DrawerItem
-        icon={({ color, size }) => (
-          <Ionicons name="information-circle" size={30} color={color} />
-        )}
-        label="About"
-        onPress={() => props.navigation.navigate('About')}
-        labelStyle={{ fontSize: 17 }}
-      />
-      <Text style={{ fontSize: 14, marginLeft: 40 }}>{'\n'}{'\n'}</Text>
-    </DrawerContentScrollView>
-    
+      <DrawerContentScrollView {...props}>
+        <DrawerItem
+          icon={({ color, size }) => <Ionicons name="ios-home" size={30} color={color} />}
+          label="Home"
+          onPress={() => props.navigation.navigate('Home')}
+          labelStyle={{ fontSize: 17 }}
+        />
+        <DrawerItem
+          icon={({ color, size }) => <Ionicons name="calendar" size={30} color={color} />}
+          label="What's On?"
+          onPress={() => props.navigation.navigate("What's On?")}
+          labelStyle={{ fontSize: 17 }}
+        />
+        <DrawerItem
+          icon={({ color, size }) => (
+            <MaterialIcons name="collections" size={30} color={color} />
+          )}
+          label="Collection"
+          onPress={() => props.navigation.navigate('Collection')}
+          labelStyle={{ fontSize: 17 }}
+        />
+        <DrawerItem
+          icon={({ color, size }) => <Ionicons name="walk" size={30} color={color} />}
+          label="Tours"
+          onPress={() => props.navigation.navigate('Tours')}
+          labelStyle={{ fontSize: 17 }}
+        />
+        <DrawerItem
+          icon={({ color, size }) => <Ionicons name="navigate" size={30} color={color} />}
+          label="Hours and Location"
+          onPress={() => props.navigation.navigate('Hours and Location')}
+          labelStyle={{ fontSize: 17 }}
+        />
+        <DrawerItem
+          icon={({ color, size }) => (
+            <Ionicons name="information-circle" size={30} color={color} />
+          )}
+          label="About"
+          onPress={() => props.navigation.navigate('About')}
+          labelStyle={{ fontSize: 17 }}
+        />
+        <Text style={{ fontSize: 14, marginLeft: 40 }}>{'\n'}{'\n'}</Text>
+      </DrawerContentScrollView>
+      
 
 
-    <View style={{ flexDirection: 'row'}}> 
-      <DrawerItem
-        icon={({ color, size }) => (
-          <Ionicons name="logo-instagram" size={30} color={color} />
-        )}
-        label=""
-        style={drawerItemStyle}
-        onPress={() =>
-          Linking.openURL('https://www.instagram.com/wollongongbotanicgarden/')
-        }
-      />
-      <DrawerItem
-        icon={({ color, size }) => (
-          <Ionicons name="logo-facebook" size={30} color={color} />
-        )}
-        label=""
-        style={drawerItemStyle}
-        onPress={() =>
-          Linking.openURL('https://www.facebook.com/wollongongbotanicgarden/')
-        }
-      />
-      <DrawerItem
-        icon={({ color, size }) => (
-          <MaterialCommunityIcons name="youtube" size={30} color={color} />
-        )}
-        label=""
-        style={drawerItemStyle}
-        onPress={() => 
-          Linking.openURL('https://www.youtube.com/@wollongongbotanicgarden8728')}
-      />
-      <DrawerItem
-        icon={({ color, size }) => (
-          <MaterialIcons name="language" size={30} color={color} />
-        )}
-        label=""
-        style={drawerItemStyle}
-        onPress={() => {
-          Linking.openURL('https://wollongongbotanicgarden.com.au/')
-        }}
-      />
-    </View>
-    
-    
-    
+      <View style={{ flexDirection: 'row'}}> 
+        <DrawerItem
+          icon={({ color, size }) => (
+            <Ionicons name="logo-instagram" size={30} color={color} />
+          )}
+          label=""
+          style={drawerItemStyle}
+          onPress={() =>
+            Linking.openURL('https://www.instagram.com/wollongongbotanicgarden/')
+          }
+        />
+        <DrawerItem
+          icon={({ color, size }) => (
+            <Ionicons name="logo-facebook" size={30} color={color} />
+          )}
+          label=""
+          style={drawerItemStyle}
+          onPress={() =>
+            Linking.openURL('https://www.facebook.com/wollongongbotanicgarden/')
+          }
+        />
+        <DrawerItem
+          icon={({ color, size }) => (
+            <MaterialCommunityIcons name="youtube" size={30} color={color} />
+          )}
+          label=""
+          style={drawerItemStyle}
+          onPress={() => 
+            Linking.openURL('https://www.youtube.com/@wollongongbotanicgarden8728')}
+        />
+        <DrawerItem
+          icon={({ color, size }) => (
+            <MaterialIcons name="language" size={30} color={color} />
+          )}
+          label=""
+          style={drawerItemStyle}
+          onPress={() => {
+            Linking.openURL('https://wollongongbotanicgarden.com.au/')
+          }}
+        />
+      </View>
     </View>
   );
 }

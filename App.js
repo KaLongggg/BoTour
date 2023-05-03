@@ -33,6 +33,7 @@ const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
+//Side menu
 function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
@@ -41,6 +42,7 @@ function CustomDrawerContent(props) {
   );
 }
 
+//Header
 function MainStackNavigator() {
   return (
     <Stack.Navigator 
@@ -48,7 +50,7 @@ function MainStackNavigator() {
       screenOptions={{
         headerStyle: {
           backgroundColor: '#5F8575',
-          height: 100,
+          height: 90,
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -107,7 +109,7 @@ function BottomTabNavigator() {
             iconName = focused ? 'ios-heart' : 'ios-heart-outline';
           }
 
-          // Add an onPress event to the 'Home' (hamburger menu) icon
+          
           if (route.name === 'Home') {
             return <Ionicons name={iconName} size={30} color={color} onPress={toggleDrawer} />;
           }
@@ -115,7 +117,7 @@ function BottomTabNavigator() {
           return <Ionicons name={iconName} size={30} color={color} />;
         },
         tabBarLabel: ({ focused, color }) => {
-          return <Text style={{ fontSize: 15, color: focused ? 'blue' : 'gray' }}>{route.name}</Text>;
+          return <Text style={{ fontSize: 15, color: focused ? 'blue' : 'gray', marginBottom:10 }}>{route.name}</Text>;
         },
         tabBarVisible: true,
         activeTintColor: 'blue',
