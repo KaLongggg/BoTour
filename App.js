@@ -4,9 +4,10 @@ import { StyleSheet, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentScrollView } from '@react-navigation/drawer';
 import { Ionicons } from '@expo/vector-icons';
 import * as tf from '@tensorflow/tfjs-react-native';
+import { View } from 'react-native';
 
 
 // Import screens here
@@ -32,16 +33,71 @@ const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
-function BottomTabNavigator() {
+function CustomDrawerContent(props) {
   return (
+    <DrawerContentScrollView {...props}>
+      <View style={{ height: 120, backgroundColor: '#5F8575' }} />
+      <SideMenu {...props} />
+    </DrawerContentScrollView>
+  );
+}
+
+function MainStackNavigator() {
+  return (
+    <Stack.Navigator 
+      initialRouteName="Main"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#5F8575',
+          height: 100,
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize: 24,
+          alignSelf: 'flex-end',
+        },
+      }}
+    >
+      
+      <Stack.Screen name="Main" component={BottomTabNavigator} options={{ headerShown: false }}/>
+      <Stack.Screen name="HomePage" component={HomePage} />
+      <Stack.Screen name="What's On?" component={WhatsOnScreen} options={{ title: "What's On"}} />
+      <Stack.Screen name="Collection" component={CollectionScreen} />
+      <Stack.Screen name="Tours" component={ToursScreen} />
+      <Stack.Screen name="Hours and Location" component={HoursandLocationScreen} />
+      <Stack.Screen name="About" component={AboutScreen} />
+      <Stack.Screen name="PlantSales" component={PlantSales} />
+      <Stack.Screen name="BotanicGardensDay" component={BotanicGardensDay} />
+      <Stack.Screen name="Anniversary" component={Anniversary} /> 
+      <Stack.Screen name="TopCandidates" component={TopCandidatesScreen} />
+      <Stack.Screen name="PlantInfo" component={PlantInfoScreen} />
+      <Stack.Screen name="CapturedImage" component={CapturedImage} options={{ title: 'Captured Image' }} />
+      <Stack.Screen name="SideMenu" component={SideMenu} options={{ headerShown: false }} />
+
+  
+    </Stack.Navigator>
+  );
+}
+
+function BottomTabNavigator() {
+  const navigationRef = React.useRef();
+  
+  // Add this function to handle the drawer toggle
+  const toggleDrawer = () => {
+    navigationRef.current?.toggleDrawer();
+  };
+
+    return (
     <BottomTab.Navigator
+      ref={navigationRef}
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === 'Home') {
-            iconName = focused ? 'ios-home' : 'ios-home-outline';
+          if (route.name === 'Home') { 
+            iconName = focused ? 'ios-menu' : 'ios-menu-outline'; 
           } else if (route.name === 'Recognizer') {
             iconName = focused ? 'ios-camera' : 'ios-camera-outline';
           } else if (route.name === 'Map') {
@@ -50,6 +106,11 @@ function BottomTabNavigator() {
             iconName = focused ? 'ios-search' : 'ios-search-outline';
           } else if (route.name === 'Favorite') {
             iconName = focused ? 'ios-heart' : 'ios-heart-outline';
+          }
+
+          // Add an onPress event to the 'Home' (hamburger menu) icon
+          if (route.name === 'Home') {
+            return <Ionicons name={iconName} size={30} color={color} onPress={toggleDrawer} />;
           }
 
           return <Ionicons name={iconName} size={30} color={color} />;
@@ -65,8 +126,7 @@ function BottomTabNavigator() {
         },
       })}
     >
-      {/* <BottomTab.Screen name="Home" component={(props) => <HomePage {...props} />} /> */}
-      <BottomTab.Screen name="Home" component={HomePage} options={{ headerShown: false}}/>
+      <BottomTab.Screen name="Home" component={HomePage}/> 
       <BottomTab.Screen name="Recognizer" component={RecognizerScreen} />
       <BottomTab.Screen name="Map" component={MapScreen} />
       <BottomTab.Screen name="Search" component={SearchScreen} />
@@ -76,55 +136,18 @@ function BottomTabNavigator() {
   );
 }
 
-function MainStackNavigator() {
-  return (
-    <Stack.Navigator 
-      initialRouteName="Main"
-      screenOptions={{
-      headerShown: false,
-      }}
-    >
-      
-      <Stack.Screen name="Main" component={BottomTabNavigator} />
-      <Stack.Screen name="What's On?" component={WhatsOnScreen} options={{ title: "What's On", headerStyle: { backgroundColor: '#5F8575' }, headerTintColor: '#fff',}} />
-      <Stack.Screen name="Collection" component={CollectionScreen} />
-      <Stack.Screen name="Tours" component={ToursScreen} />
-      <Stack.Screen name="Hours and Location" component={HoursandLocationScreen} />
-      <Stack.Screen name="About" component={AboutScreen} />
-      <Stack.Screen name="PlantSales" component={PlantSales} />
-      <Stack.Screen name="BotanicGardensDay" component={BotanicGardensDay} />
-      <Stack.Screen name="Anniversary" component={Anniversary} /> 
-      <Stack.Screen name="TopCandidates" component={TopCandidatesScreen} />
-      <Stack.Screen name="PlantInfo" component={PlantInfoScreen} />
-      <Stack.Screen name="CapturedImage" component={CapturedImage} options={{ title: 'Captured Image' }} />
-  
-    </Stack.Navigator>
-  );
-}
-
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator
-        initialRouteName="Main"
-        drawerContent={(props) => <SideMenu {...props} />}
-        screenOptions={({ route }) => ({
-          headerTitle: route.name,
-          headerStyle: {
-            backgroundColor: '#5F8575',
-            height: 120,
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-      fontWeight: 'bold'
-    }
-  })}
-      >
-        <Drawer.Screen 
-          name="BoTour" 
+    <Drawer.Navigator
+      initialRouteName="Main"
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
+    >
+      <Drawer.Screen 
+          name=" " 
           component={MainStackNavigator} 
           options={{
-            drawerIcon: ({ focused, size }) => (
+            drawerIcon: ({ focused, size }) => (  
               <Entypo 
                 name="menu" 
                 size={size + 20}  
@@ -133,7 +156,7 @@ export default function App() {
           }}
         />
       </Drawer.Navigator>
-      <StatusBar style="auto" />
+      
     </NavigationContainer>
   );
 }
