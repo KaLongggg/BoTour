@@ -1,14 +1,14 @@
 import React from 'react';
 import { Ionicons, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
-import { Linking, View } from 'react-native';
+import { Linking, View, Text } from 'react-native';
 
 
 
 function SideMenu(props) {
   const drawerItemStyle = { marginRight: -50 };
   return (
-    <View style={{ flex:  1, backgroundColor: '#BCC6CC'}}>
+    <View style={{ flex:  1, }}>
     <DrawerContentScrollView {...props}>
       <DrawerItem
         icon={({ color, size }) => <Ionicons name="ios-home" size={30} color={color} />}
@@ -50,7 +50,10 @@ function SideMenu(props) {
         onPress={() => props.navigation.navigate('About')}
         labelStyle={{ fontSize: 17 }}
       />
+      <Text style={{ fontSize: 14, marginLeft: 40 }}>{'\n'}{'\n'}</Text>
     </DrawerContentScrollView>
+    
+
 
     <View style={{ flexDirection: 'row'}}> 
       <DrawerItem
@@ -101,5 +104,3 @@ function SideMenu(props) {
 }
 
 export default SideMenu;
-
-

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet, Linking } from 'react-native';
-
+import BottomTabNavigator from './BottomTabNavigator';
 
 export default function WhatsOnScreen({ navigation }) {
   return (
@@ -16,6 +16,7 @@ export default function WhatsOnScreen({ navigation }) {
           </TouchableOpacity>
         )}
       />
+      <BottomTabNavigator />
     </View>
   );
 }
@@ -31,33 +32,33 @@ const gridImages = [
   {
     // title: 'Sculpture in the Garden',
     source: require('./assets/WhatsOn/SculptureInTheGarden.jpg'),
-        onPress: () => {
+    onPress: () => {
       Linking.openURL('https://wollongongbotanicgarden.com.au/events/sculpture-in-the-garden');
     },
   },
   {
     // title: 'Plant Sales',
-    // Create a page but omit 'Upcoming Sales' 
+    // Create a page but omit 'Upcoming Sales'
     source: require('./assets/WhatsOn/PlantSales.jpg'),
-    onPress: (navigation) => navigation.navigate('PlantSales')
+    onPress: (navigation) => navigation.navigate('PlantSales'),
   },
   {
-    // title: 'Botanic Gardens Day', 
-    //Create a page 
+    // title: 'Botanic Gardens Day',
+    //Create a page
     source: require('./assets/WhatsOn/BotanicGardensDay.jpg'),
-    onPress: (navigation) => navigation.navigate('BotanicGardensDay')
+    onPress: (navigation) => navigation.navigate('BotanicGardensDay'),
   },
   {
-    // title: '50th Anniversary', 
-    //Create a page 
+    // title: '50th Anniversary',
+    //Create a page
     source: require('./assets/WhatsOn/Anniversary.jpg'),
-    onPress: (navigation) => navigation.navigate('Anniversary')
+    onPress: (navigation) => navigation.navigate('Anniversary'),
   },
   {
-    // title: 'Spaces for Hire', 
+    // title: 'Spaces for Hire',
     //Create a page
     source: require('./assets/WhatsOn/SpacesForHire.jpg'),
-    onPress: (navigation) => navigation.navigate('SpacesForHire')
+    onPress: (navigation) => navigation.navigate('SpacesForHire'),
   },
   {
     // title: 'News',
@@ -70,6 +71,9 @@ const gridImages = [
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+  },
+  listContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

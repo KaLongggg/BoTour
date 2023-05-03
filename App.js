@@ -36,7 +36,6 @@ const Stack = createStackNavigator();
 function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
-      <View style={{ height: 120, backgroundColor: '#5F8575' }} />
       <SideMenu {...props} />
     </DrawerContentScrollView>
   );
@@ -97,7 +96,7 @@ function BottomTabNavigator() {
           let iconName;
 
           if (route.name === 'Home') { 
-            iconName = focused ? 'ios-menu' : 'ios-menu-outline'; 
+            iconName = focused ? 'ios-home' : 'ios-home-outline'; 
           } else if (route.name === 'Recognizer') {
             iconName = focused ? 'ios-camera' : 'ios-camera-outline';
           } else if (route.name === 'Map') {
