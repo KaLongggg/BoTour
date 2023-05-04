@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -50,7 +50,7 @@ function MainStackNavigator() {
       screenOptions={{
         headerStyle: {
           backgroundColor: '#5F8575',
-          height: 90,
+          height: 60,
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -111,19 +111,19 @@ function BottomTabNavigator() {
 
           
           if (route.name === 'Home') {
-            return <Ionicons name={iconName} size={30} color={color} onPress={toggleDrawer} />;
+            return <Ionicons name={iconName} size={30} style={{paddingTop:10}} color={color} onPress={toggleDrawer} />;
           }
 
-          return <Ionicons name={iconName} size={30} color={color} />;
+          return <Ionicons name={iconName} size={30} color={color} style={{paddingTop:10}}/>;
         },
         tabBarLabel: ({ focused, color }) => {
-          return <Text style={{ fontSize: 15, color: focused ? 'blue' : 'gray', marginBottom:10 }}>{route.name}</Text>;
+          return <Text style={{ fontSize: 15, color: focused ? 'blue' : 'gray', marginBottom:0 }}>{route.name}</Text>;
         },
         tabBarVisible: true,
         activeTintColor: 'blue',
         inactiveTintColor: 'gray',
         tabBarStyle: {
-          height: 80, // change this to your desired height
+          height: 90, // change this to your desired height
         },
       })}
     >

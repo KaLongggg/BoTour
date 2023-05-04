@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#daecf0',
   },
   carouselItem: {
     backgroundColor: 'Grey',
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: -20,
-    marginBottom: 0,
+    marginBottom: -5,
   },
   gridImage: {
     width: '95%',
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 2,
   },
   activePaginationDot: {
-    backgroundColor: 'blue',
+    backgroundColor: 'green',
   },
   inactivePaginationDot: {
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
