@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet, Linking } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet, Linking, Dimensions } from 'react-native';
 import BottomTabNavigator from './BottomTabNavigator';
 
 export default function WhatsOnScreen({ navigation }) {
@@ -10,6 +10,7 @@ export default function WhatsOnScreen({ navigation }) {
         keyExtractor={(item, index) => index.toString()}
         numColumns={2}
         contentContainerStyle={styles.listContainer}
+        columnWrapperStyle={styles.row} // Update this line
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => item.onPress(navigation)}>
             <Image source={item.source} style={styles.image} />
@@ -74,17 +75,20 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
     padding: 14,
   },
+  row: {
+    flex: 1, // Add this line
+    justifyContent: 'space-between', // Add this line
+    marginBottom: 14, // Add this line
+  },
   image: {
-    width: '55%',
-    aspectRatio: 0.9,
-    margin: 7,
-    height: 200,
+    width: Dimensions.get('window').width * 0.45,
+    height: Dimensions.get('window').height * 0.25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 5,
+    marginBottom: 0,
     borderRadius: 10,
   },
 });

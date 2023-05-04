@@ -5,6 +5,31 @@ import { getPlantImageURI } from './TopCandidatesScreen';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+const getProbabilityColor = (probability) => {
+  if (probability >= 90) {
+    return 'green';
+  } else if (probability >= 80) {
+    return 'limegreen';
+  } else if (probability >= 70) {
+    return 'lightgreen';
+  } else if (probability >= 60) {
+    return 'yellowgreen';
+  } else if (probability >= 50) {
+    return 'yellow';
+  } else if (probability >= 40) {
+    return 'gold';
+  } else if (probability >= 30) {
+    return 'orange';
+  } else if (probability >= 20) {
+    return 'orangered';
+  } else if (probability >= 10) {
+    return 'red';
+  } else {
+    return 'darkred';
+  }
+};
+
+
 const PlantInfoScreen = ({ route }) => {
   const { plantClass, plantProbability, photoURI } = route.params; // Get plantProbability and photoURI
   const plantInfo = plantData[plantClass];
@@ -24,14 +49,17 @@ const PlantInfoScreen = ({ route }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image source={plantImageURI} style={styles.plantImage} />
-      <Text style={styles.title}></Text>
-      <Text style={styles.plantName}>{plantClass} ({plantProbability}%)</Text>
-      <Text style={styles.title}></Text>
-      <Text style={styles.description}>Description: {plantInfo.description}</Text>
-      <Text style={styles.info}>Family: {plantInfo.family}</Text>
-      <Text style={styles.info}>Plant Type: {plantInfo.type}</Text>
-      <Text style={styles.info}>Season of Interest: {plantInfo.seasonOfInterest}</Text>
-      <Text style={styles.info}>Height: {plantInfo.height}</Text>
+    <Text style={styles.title}></Text>
+    <Text style={styles.plantName}>{plantClass} <Text style={ [{ color: getProbabilityColor(plantProbability) }]}>({plantProbability}%)
+    </Text></Text>
+    <Text style={styles.title}></Text>
+      <View style={styles.infoContainer}>
+        <Text style={styles.description}>Description: {plantInfo.description}</Text>
+        <Text style={styles.info}>Family: {plantInfo.family}</Text>
+        <Text style={styles.info}>Plant Type: {plantInfo.type}</Text>
+        <Text style={styles.info}>Season of Interest: {plantInfo.seasonOfInterest}</Text>
+        <Text style={styles.info}>Height: {plantInfo.height}</Text>
+      </View>
       <TouchableOpacity
           style={styles.button}
           onPress={() =>
@@ -62,8 +90,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#ddf',
     borderRadius: 5,
-    width: 336,
-    height: 336,
+    width: 268,
+    height: 268,
     resizeMode: 'contain',
   },
   title: {
@@ -75,15 +103,25 @@ const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: 'center',
   },
+  probabilityText: {
+    color: 'green',
+  },
+  infoContainer: {
+    backgroundColor: '#f0f0f0',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: 'lightgrey',
+    padding: 10,
+    marginBottom: 20,
+  },
   description: {
     fontSize: 18,
     textAlign: 'left',
-    paddingHorizontal: 10,
   },
   info: {
     fontSize: 18,
     textAlign: 'left',
-    paddingHorizontal: 10,
+    marginTop: 8,
   },
   error: {
     fontSize: 18,
@@ -97,11 +135,11 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignItems: 'center',
     marginTop: 10,
-  },
-  buttonText: {
+    },
+    buttonText: {
     color: '#fff',
     fontSize: 18,
-  },
-});
+    },
+    });
 
 export default PlantInfoScreen;

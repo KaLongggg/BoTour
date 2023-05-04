@@ -17,6 +17,29 @@ const plantImages = {
   Sandburs: require('./assets/PlantImage/sandburs.jpg'),
 };
 
+const getProbabilityColor = (probability) => {
+  if (probability >= 90) {
+    return 'green';
+  } else if (probability >= 80) {
+    return 'limegreen';
+  } else if (probability >= 70) {
+    return 'lightgreen';
+  } else if (probability >= 60) {
+    return 'yellowgreen';
+  } else if (probability >= 50) {
+    return 'yellow';
+  } else if (probability >= 40) {
+    return 'gold';
+  } else if (probability >= 30) {
+    return 'orange';
+  } else if (probability >= 20) {
+    return 'orangered';
+  } else if (probability >= 10) {
+    return 'red';
+  } else {
+    return 'darkred';
+  }
+};
 
 export const getPlantImageURI = (plantClass) => {
     const formattedPlantClass = plantClass.replace(' ', '_');
@@ -31,10 +54,26 @@ export default function TopCandidatesScreen({ route }) {
   const renderItem = ({ item }) => (
     <TouchableOpacity
       style={styles.itemContainer}
-      onPress={() => navigation.navigate('PlantInfo', { plantClass: item.plantClass, plantProbability: (item.probability * 100).toFixed(0), photoURI })}
+      onPress={() =>
+        navigation.navigate('PlantInfo', {
+          plantClass: item.plantClass,
+          plantProbability: (item.probability * 100).toFixed(0),
+          photoURI,
+        })
+      }
     >
       <Image source={getPlantImageURI(item.plantClass)} style={styles.smallPlantImage} />
-      <Text style={styles.itemText}>{`${item.plantClass}: ${(item.probability * 100).toFixed(0)}%`}</Text>
+      <View style={styles.textContainer}>
+        <Text style={styles.itemText}>{item.plantClass}:<Text
+          style={[
+            styles.itemText,
+            { color: getProbabilityColor((item.probability * 100).toFixed(0)) },
+          ]}
+        >
+          {(item.probability * 100).toFixed(0)}%
+        </Text></Text>
+        
+      </View>
     </TouchableOpacity>
   );
 
@@ -86,14 +125,14 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#ddf',
     borderRadius: 8,
-    width: 224,
-    height: 224,
+    width: 200,
+    height: 200,
     resizeMode: 'contain',
     marginBottom: 10,
   },
   smallPlantImage: {
-    width: 112,
-    height: 112,
+    width: 98,
+    height: 98,
     borderRadius: 5,
     resizeMode: 'contain',
   },
