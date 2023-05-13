@@ -76,7 +76,7 @@ useEffect(() => {
 };
 
 
-  const plantClasses = ['Lavender', 'Coleus', 'Lagerstroemia Lipan', 'Cantaurea', 'Lucky Nut', 'Aloe Cameronii','Aloe Maculata', 'Camellia', 'Dracaena Draco', 'Hibiscus', 'Salvia', 'Sandburs', 'Fountain Grass'];
+  const plantClasses = ['Lavender', 'Coleus', 'Lagerstroemia Lipan', 'Centaurea', 'Lucky Nut', 'Aloe Cameronii','Aloe Maculata', 'Camellia', 'Dracaena Draco', 'Hibiscus', 'Salvia', 'Sandburs', 'Fountain Grass'];
   const captureAndPredict = async () => {
     if (cameraRef && model) {
       console.log('Model is loaded');

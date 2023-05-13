@@ -6,7 +6,7 @@ const plantImages = {
   Lavender: require('./assets/PlantImage/lavender.jpg'),
   Coleus: require('./assets/PlantImage/coleus.jpg'),
   Lagerstroemia_Lipan: require('./assets/PlantImage/lagerstroemia_lipan.jpg'),
-  Cantaurea: require('./assets/PlantImage/cantaurea.jpg'),
+  Centaurea: require('./assets/PlantImage/centaurea.jpg'),
   Lucky_Nut: require('./assets/PlantImage/lucky_nut.jpg'),
   Aloe_Cameronii: require('./assets/PlantImage/aloe_cameronii.jpg'),
   Aloe_Maculata: require('./assets/PlantImage/aloe_maculata.jpg'),
