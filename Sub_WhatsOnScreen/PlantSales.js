@@ -204,12 +204,13 @@ const styles = StyleSheet.create({
   },
   tableHeader: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     borderBottomWidth: 1,
     borderBottomColor: 'black',
     paddingBottom: 5,
     marginBottom: 5,
     backgroundColor: '#f2f0f0',
+    textAlign: 'center',
   },
   tableRow: {
     flexDirection: 'row',
