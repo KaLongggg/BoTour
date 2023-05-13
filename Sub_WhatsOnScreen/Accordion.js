@@ -22,7 +22,7 @@ const Accordion = ({ title, children }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    marginBottom: 10,
+    marginBottom: 20,
     borderRadius: 5,
     overflow: 'hidden',
     paddingRight: 35,

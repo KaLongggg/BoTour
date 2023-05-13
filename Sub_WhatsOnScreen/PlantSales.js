@@ -38,11 +38,11 @@ const PlantSales = () => {
             our calendar. {"\n"}{"\n"}
             </Text>
             
-            <Accordion title="Available plants" >{'\n'}
-              <Text style={styles.justifyText}>Below is the plant list for 21 April 2023. This list is updated a few days prior to each sale.{'\n'}{'\n'}
-                Plants are listed with their scientific name in italics, followed by the common name in brackets.{'\n'}{'\n'}
+            <Accordion title="Available plants" >
+              <Text style={[styles.justifyText, {justifyContent: 'flex-start'}]}>{'\n'}Below is the plant list for 21 April 2023. This list is updated a few days prior to each sale.{'\n\n'}
+                Plants are listed with their scientific name in italics, followed by the common name in brackets.{'\n\n'}
 
-                <Text style={{fontWeight: 'bold'}}>Illawarra Local Native Species </Text>{'\n'}
+                <Text style={{fontWeight: 'bold'}}>Illawarra Local Native Species {'\n'}</Text>
                 ・	Acmena smithii var. minor (Dwarf Lilly Pilly){'\n'}
                 ・	Adiantum spp. (Maidenhair Fern){'\n'}
                 ・	Alocasia bribanensis (Cunjevoi){'\n'}
@@ -62,79 +62,8 @@ const PlantSales = () => {
                 ・	Citriobatus pauciflorus (Native Orange Thorn){'\n'}
                 ・	Coprosma (Prickley Current Bush){'\n'}
                 ・	Cryptocarya microneura (Murrogun){'\n'}
-                ・	Cymbopogon refractus (Barb Wire Grass){'\n'}
-                ・	Deeringia amaranthoides (Shrubby Deeringia){'\n'}
-                ・	Dianella caerulea (Blue Flax-lily){'\n'}
-                ・	Dianella congesta (Beach Flax Lily){'\n'}
-                ・	Dodonaea triquetra (Large Leaf Hop Bush){'\n'}
-                ・	Dodonaea viscosa (Hop Bush){'\n'}
-                ・	Echinopogon caespitosus (Tufted Hedgehog Grass){'\n'}
-                ・	Emmenosperma alphitonioidoes (Yellow Ash){'\n'}
-                ・	Ehretia acuminata (Koda){'\n'}
-                ・	Eupomatia laurina (Bolwarra){'\n'}
-                ・	Ficinia / Isolepsis nodosa (Knobby Club-rush){'\n'}
-                ・	Ficus marcrophylla (Moreton Bay Fig){'\n'}
-                ・	Ficus superba (Deciduous Fig){'\n'}
-                ・	Gahnia sieberiana (Red-fruit Saw-sedge){'\n'}
-                ・	Glochidion ferdinandi (Cheese Tree){'\n'}
-                ・	Goodia lotifolia (Golden Tip){'\n'}
-                ・	Goodenia ovata-prostrate form (Hop Goodenia){'\n'}
-                ・	Guioa semiglauca (Guioa){'\n'}
-                ・	Hardenbergia violacea (Purple Coral Pea){'\n'}
-                ・	Hibbertia aspera (Rough Guinea Flower){'\n'}
-                ・	Hibbertia obtusifolia (Hoary Guinea Flower){'\n'}
-                ・	Indigofera australis (Native Indigo){'\n'}
-                ・	Juncus kraussii (Sea Rush){'\n'}
-                ・	Kennedia rubicunda (Dusky Coral Pea){'\n'}
-                ・	Kunzea ambigua (White Kunzea){'\n'}
-                ・	Libertia paniculata (Branching Grass-Flag){'\n'}
-                ・	Lomandra longifolia (Spiny-headed Mat-rush){'\n'}
-                ・	Maclura cochinchinensis (Cockspur Thorn){'\n'}
-                ・	Melaleuca hypericifolia (Hillock Bush){'\n'}
-                ・	Melaleuca styphelioides (Prickly Paperbark){'\n'}
-                ・	Melia azedarach (White Cedar){'\n'}
-                ・	Meliocope micrococca (White Euodia){'\n'}
-                ・	Olearia microphylla (Small-leaved Daisy Bush){'\n'}
-                ・	Olearia tomentosa (Toothed Daisy-bush){'\n'}
-                ・	Olearia viscidula (Viscid Daisy Bush){'\n'}
-                ・	Ozothamnus diosmifolius (Rice Flower){'\n'}
-                ・	Pellaea falcata (Sickle Fern){'\n'}
-                ・	Pennisetum alopecuroides (Swamp Foxtail Grass){'\n'}
-                ・	Peperomia blanda var. floribunda (Pepperomia){'\n'}
-                ・	Pittosporum multiflorum (Orange Thorn){'\n'}
-                ・	Pittosporum revolutum (Wild Yellow Jasmine){'\n'}
-                ・	Platysace lanceolata (Shrubby Platysace){'\n'}
-                ・	Plectranthus graveolens (Bush Basil){'\n'}
-                ・	Podocarpus elatus (Plum Pine){'\n'}
-                ・	Pollia crispata (Pollia){'\n'}
-                ・	Pollia crispata dwarf (Dwarf Pollia){'\n'}
-                ・	Polyscias elegans (Celery Wood){'\n'}
-                ・	Polyscias murrayi (Pencil Cedar){'\n'}
-                ・	Pratia pedunculata (Matted Pratia){'\n'}
-                ・	Prostanthera incisa var. sieberi (Cut-leaf Mintbush){'\n'}
-                ・	Prostanthera lasianthos (Victorian Christmas Bush){'\n'}
-                ・	Prostanthera nivea (Snowy Mint Bush){'\n'}
-                ・	Prostanthera ovalifolia (Oval-leaf Mintbush){'\n'}
-                ・	Rhagodia candolleana (Coastal Salt Bush){'\n'}
-                ・	Sambucus australasica (Native Elderberry){'\n'}
-                ・	Scaevola aemulea (Purple Fan Flower){'\n'}
-                ・	Schelhammera undulata (Lilac Lily){'\n'}
-                ・	Scolopia braunii (Flintwood){'\n'}
-                ・	Sorghum leiocladum (Wild Sorghum){'\n'}
-                ・	Stenocarpus salignus (Scrub Beefwood){'\n'}
-                ・	Stipa ramossima (Stout Bamboo Grass){'\n'}
-                ・	Synoum glandulosum (Scentless Rosewood){'\n'}
-                ・	Todea (King Fern){'\n'}
-                ・	Toona ciliata (Red Cedar){'\n'}
-                ・	Tristania nerifolia (Water Gum){'\n'}
-                ・	Trochocarpa laurina (Tree Heath){'\n'}
-                ・	Viola hederacea (Native Violet){'\n'}
-                ・	Westringia fruticosa (Coastal Rosemary){'\n'}
-                ・	Westringia longifolia (Long-leaved Westringia){'\n'}
-                ・	Wilkiea huegeliana (Veiny Wilkiea){'\n'}
-                ・	Zieria smithii (Sandfly Zieria){'\n'}{'\n'}
 
-                <Text style={{fontWeight: 'bold'}}>Australian Native Species</Text>{'\n'}
+                <Text style={{fontWeight: 'bold'}}>Australian Native Species{'\n'}</Text>
                 ・	Acacia cognata (Bower Wattle){'\n'}
                 ・	Acacia cultriformis (Knife-leaf Wattle){'\n'}
                 ・	Callistemon sp and cultivars (Bottlebrush){'\n'}
@@ -168,13 +97,13 @@ const PlantSales = () => {
             <Text>{"\n"}</Text>
 
             <Accordion title="Prices">
-              <Text>{'\n'}Current prices for our Native Plant Sales are shown below. Prices include GST.{'\n'}</Text>
+              <Text style={styles.justifyText}>{'\n'}Current prices for our Native Plant Sales are shown below. Prices include GST.{'\n'}</Text>
 
                 <View style={styles.tableHeader}>
                   <Text style={styles.headerText}>Area</Text>
                   <Text style={styles.headerText}>Fee Name</Text>
                   <Text style={styles.headerText}>GST</Text>
-                  <Text style={styles.headerText}>Current Fee{"\n"} (incl. GST)</Text>
+                  <Text style={styles.headerText}>Current Fee</Text>
                 </View>
                 <View style={styles.tableRow}>
                   <Text style={styles.cellText}>Botanic Garden Nursery</Text>
@@ -198,7 +127,7 @@ const PlantSales = () => {
             <Text>{"\n"}</Text>
 
             <Accordion title="Payment methods">
-              <Text>{'\n'}
+              <Text style={styles.justifyText}>{'\n'}
                 You can pay by card (not AMEX) or cheque. Cash is not accepted.{"\n"}{"\n"}
                 Bring your current rates notice as proof that you’re a resident of the Wollongong City Council area to buy plants at these sales
               </Text>
@@ -206,7 +135,7 @@ const PlantSales = () => {
             <Text>{"\n"}</Text>
 
             <Accordion title="Bring back your pots">
-              <Text>{'\n'}
+              <Text style={styles.justifyText}>{'\n'}
                 We happily accept the return of pots from any plants you've bought at one of our sales, and we will reuse them.{"\n"}{"\n"}
                 Please note, we don't accept damaged pots or any pots that were bought elsewhere.
               </Text>
@@ -214,7 +143,7 @@ const PlantSales = () => {
             <Text>{"\n"}</Text>
 
             <Accordion title="Plants for schools and commnity organizations">
-              <Text>{'\n'}
+              <Text style={styles.justifyText}>{'\n'}
                 Every financial year, not-for-profit primary and secondary schools, and community centres operating on community land in the Wollongong local government area can request up to 30 plants to be donated from the Botanic Garden's Nursery.{"\n"}{"\n"}
 
                 We cannot accommodate requests for specific plants. The donation will include a mixture of native grasses, ground covers, trees and shrubs from our available supplies. If you have a specific plant request, you can purchase plants directly from the nursery as a special order (see 'Purchasing Plants' below) or come along to one of our sale days.{"\n"}{"\n"}
@@ -236,10 +165,8 @@ const PlantSales = () => {
                 If your school or community centre would like to purchase specific plants you can come to an upcoming Plant Sale (dates listed above) or email us with your request for a special order.{"\n"}{"\n"}
 
                 Make sure you include details of the types and quantity of plants you would like. Please note: There may be a limit on what we can provide you, so we will assess your request to order and if applicable, offer you similar alternatives.{"\n"}{"\n"}
-              </Text>{"\n"}
+                {'\n'}</Text>
             </Accordion>
-
-        
         </Text>  
       </View>
     </ScrollView>
@@ -282,19 +209,21 @@ const styles = StyleSheet.create({
     borderBottomColor: 'black',
     paddingBottom: 5,
     marginBottom: 5,
+    backgroundColor: '#f2f0f0',
   },
   tableRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingBottom: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
   },
   headerText: {
     fontSize: 16,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   cellText: {
     fontSize: 14,
-    borderWidth: 0.5, // Add border
     borderColor: 'black', // Set border color
     width: 90, // Adjust the width of the cell
     height: 55, // Adjust the height of the cell
