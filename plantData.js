@@ -20,7 +20,7 @@ const plantData = {
       seasonOfInterest: 'Summer to Fall',
       height: '8 to 12 feet (2.4 to 3.6 meters)',
     },
-    'Cantaurea': {
+    'Centaurea': {
       description: 'Centaurea is a genus of flowering plants in the family Asteraceae.',
       family: 'Asteraceae',
       type: 'Annual or perennial',
