@@ -5,7 +5,7 @@ const About = () => {
   return (
     <ScrollView>
     <View style={styles.container}>
-      <Image source={require("./assets/about.jpg")} style={{ width: "100%", height: 200 }} />
+      <Image source={require("./assets/about.jpg")} style={styles.image} />
 
       <Text style={styles.heading}>Wollongong Botanic Garden</Text>
 
@@ -45,13 +45,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#fff',
   },
-  image: {
-    width: 400,
-    height: 200,
-    borderRadius: 10,
-    marginBottom: 10,
-    marginTop: 10,
-  },
+
   heading: {
     fontSize: 24,
     fontWeight: 'bold',
@@ -81,6 +75,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     marginTop: 16,
     marginBottom: 16,
+    borderRadius: 10,
   },
 });
 
