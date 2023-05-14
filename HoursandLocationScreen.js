@@ -14,17 +14,17 @@ const HoursAndLocation = () => {
       </Text>
       <Text style={styles.heading}>Opening Hours</Text>
       <Text style={styles.text}>
-        We are open daily (except Christmas Day and Good Friday).{"\n"}
+        We are open daily (except Christmas Day and Good Friday).
       </Text>
 
       <Text>
         <View style={styles.tableRow}>
-          <Text style={styles.cellText}>Non-daylight saving hours{"\n"}From 2 April 2023</Text>
-          <Text style={styles.cellText}>7am to 5pm daily</Text>
+          <Text style={styles.cellText}>{"\n"}Non-daylight saving hours{"\n"}From 2 April 2023</Text>
+          <Text style={styles.cellText}>{"\n"}7am to 5pm daily</Text>
         </View>
         <View style={styles.tableRow}>
-          <Text style={styles.cellText}>Daylight saving hours{"\n"}From 1 October 2023</Text>
-          <Text style={styles.cellText}>7am to 6.45pm weekends{"\n"} and public holidays</Text>
+          <Text style={styles.cellText}>{"\n"}Daylight saving hours{"\n"}From 1 October 2023</Text>
+          <Text style={styles.cellText}>{"\n"}7am to 6.45pm weekends{"\n"} and public holidays</Text>
         </View>{"\n"}
       </Text>
 
