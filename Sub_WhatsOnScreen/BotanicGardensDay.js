@@ -1,10 +1,62 @@
 import React, { useState } from 'react';
-import { View, Image, Text, StyleSheet, ScrollView, Linking, Dimensions } from 'react-native';
+import { View, Image, Text, StyleSheet, FlatList, Linking, ScrollView } from 'react-native';
 import Accordion from './Accordion'
 
 const BotanicGardensDay = () => {
 
     const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+
+    const data = [
+        {
+            title: 'Free Activities',
+            content: (
+                <Text>{"\n"}
+                <View style={styles.tableHeader}>
+                    <Text style={styles.headerText}>Time</Text>
+                    <Text style={styles.headerText}>Activity</Text>
+                    <Text style={styles.headerText}>Location</Text>
+                </View>
+                <View style={styles.tableRow}>
+                    <Text style={styles.cellText}>10am to 2pm</Text>
+                    <Text style={styles.cellText}>Native Plant Sale</Text>
+                    <Text style={styles.cellText}>Towri Centre</Text>
+                </View>
+                <View style={styles.tableRow}>
+                    <Text style={styles.cellText}>11am</Text>
+                    <Text style={styles.cellText}>Verge Garden Sit n' Chat</Text>
+                    <Text style={styles.cellText}>Eucalyptus Lawn</Text>
+                </View>
+                </Text>
+            ),
+        },
+        {
+            title: 'Plan Your Visit',
+            content: (
+                <Text>{"\n"}
+                The main hub of activity will be around the Towri Centre, with self-guided trails and tours taking you for a trip around the Garden!{"\n"}{"\n"}
+                Public Transport: The best way to arrive is via public transport with the free shuttle bus stopping at Northfields Ave and connecting to North Wollongong train station.{"\n"}
+                Driving: A limited number of car spaces are available at our car parks off Madoline Street or Murphys Avenue, or street parking is also available.{"\n"}
+                Cycling: we have a number of bike racks at Garden entrances.{"\n"}
+                Download our Garden map PDF, 74.02 KB and find full details (including access and mobility) on getting here.
+                </Text>
+            ),
+        },
+        {
+            title: 'About Botanic Gardens Day',
+            content: (
+                <Text>{"\n"}
+                More than 100 botanic gardens, arboreta and gardens across Australia and New Zealand participate in this national event to highlight the significant work undertaken at botanic gardens to ensure plants survive into the future.{'\n'}{'\n'}
+                For more information visit BGANZ (Botanic Gardens Australia and New Zealand Inc.)
+                </Text>
+            ),
+        },
+    ];
+
+    const renderItem = ({ item }) => (
+        <Accordion title={item.title}>
+            {item.content}
+        </Accordion>
+    );
 
   return (
     <ScrollView>
@@ -32,58 +84,24 @@ const BotanicGardensDay = () => {
                 >Instagram
             &nbsp;</Text>               
             for event updates and other plant power videos from our staff.{'\n'}{'\n'}
-                            
-            <Accordion title="Free Activities">
-              <Text>{"\n"}
-              <View style={styles.tableHeader}>
-                  <Text style={styles.headerText}>Time</Text>
-                  <Text style={styles.headerText}>Activity</Text>
-                  <Text style={styles.headerText}>Location</Text>
-                </View>
-                <View style={styles.tableRow}>
-                  <Text style={styles.cellText}>10am to 2pm</Text>
-                  <Text style={styles.cellText}>Native Plant Sale</Text>
-                  <Text style={styles.cellText}>Towri Centre</Text>
-                </View>
-                <View style={styles.tableRow}>
-                  <Text style={styles.cellText}>11am</Text>
-                  <Text style={styles.cellText}>Verge Garden Sit n' Chat</Text>
-                  <Text style={styles.cellText}>Eucalyptus Lawn</Text>
-                </View>
-              </Text>
-            </Accordion>
-            <Text>{"\n"}</Text>
-
-            <Accordion title="Plan Your Visit">
-              <Text>{"\n"}
-                The main hub of activity will be around the Towri Centre, with self-guided trails and tours taking you for a trip around the Garden!{"\n"}{"\n"}
-                Public Transport: The best way to arrive is via public transport with the free shuttle bus stopping at Northfields Ave and connecting to North Wollongong train station.{"\n"}
-                Driving: A limited number of car spaces are available at our car parks off Madoline Street or Murphys Avenue, or street parking is also available.{"\n"}
-                Cycling: we have a number of bike racks at Garden entrances.{"\n"}
-                Download our Garden map PDF, 74.02 KB and find full details (including access and mobility) on getting here.
-              </Text>
-            </Accordion>
-            <Text>{"\n"}</Text>
-
-            <Accordion title="About Botanic Gardens Day">
-              <Text>{"\n"}
-                More than 100 botanic gardens, arboreta and gardens across Australia and New Zealand participate in this national event to highlight the significant work undertaken at botanic gardens to ensure plants survive into the future.{'\n'}{'\n'}
-                For more information visit BGANZ (Botanic Gardens Australia and New Zealand Inc.)
-              </Text>
-            </Accordion>
-            <Text>{"\n"}</Text> 
-        </Text> 
+        </Text>
+        <FlatList
+            data={data}
+            renderItem={renderItem}
+            keyExtractor={item => item.title}
+        />
       </View>
-    </ScrollView>
+      </ScrollView>
   );
 }
+
 
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: '#fff',
+    paddingVertical: 20,
   },
   image: {
     width: 400,
