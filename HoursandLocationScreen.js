@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   image: {
-    width: 390,
-    height: 200,
+    width: 395,
+    height: 220,
     borderRadius: 10,
     marginBottom: 20,
     marginTop: 10,
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderBottomWidth: 1,
     borderBottomColor: 'black',
+    color: "#696969",
   },
   headerText: {
     fontSize: 16,
