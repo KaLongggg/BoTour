@@ -25,8 +25,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 5,
     overflow: 'hidden',
-    paddingRight: 35,
+    paddingRight: 20,
     width: Dimensions.get('window').width,
+    paddingLeft:20
   },
   header: {
     flexDirection: 'row',
