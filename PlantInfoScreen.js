@@ -15,9 +15,9 @@ const getProbabilityColor = (probability) => {
   } else if (probability >= 60) {
     return 'yellowgreen';
   } else if (probability >= 50) {
-    return 'yellow';
-  } else if (probability >= 40) {
     return 'gold';
+  } else if (probability >= 40) {
+    return 'goldenrod';
   } else if (probability >= 30) {
     return 'orange';
   } else if (probability >= 20) {
