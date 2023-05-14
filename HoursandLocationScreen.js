@@ -14,7 +14,7 @@ const HoursAndLocation = () => {
       </Text>
       <Text style={styles.heading}>Opening Hours</Text>
       <Text style={styles.text}>
-        We are open daily (except Christmas Day and Good Friday).
+        We are open daily (except Christmas Day and Good Friday).{"\n"}
       </Text>
 
       <Text>
@@ -25,14 +25,14 @@ const HoursAndLocation = () => {
         <View style={styles.tableRow}>
           <Text style={styles.cellText}>{"\n"}Daylight saving hours{"\n"}From 1 October 2023</Text>
           <Text style={styles.cellText}>{"\n"}7am to 6.45pm weekends{"\n"} and public holidays</Text>
-        </View>{"\n"}
+        </View>{"\n"}{"\n"}
       </Text>
 
       <Text style={styles.heading}>Location</Text>
       <Text style={styles.text}>Set on 27 hectares at the foot of Mount Keira, Wollongong Botanic Garden is a short distance from the City Centre, and next to the University of Wollongong’s main campus. We are located approximately 85 kilometres south of Sydney.</Text>
       <Image
         style={styles.image}
-        source={require("./assets/locationMap.jpg")}
+        source={require("./assets/map1.png")}
       />
 
       <Text style={styles.heading}>Getting here</Text>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   image: {
-    width: 395,
+    width: 370,
     height: 220,
     borderRadius: 10,
     marginBottom: 20,
