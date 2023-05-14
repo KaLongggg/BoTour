@@ -3,8 +3,9 @@ import { View, Text, StyleSheet, ScrollView, Image, Linking } from 'react-native
 
 const About = () => {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Image source={require("./assets/about.png")} style={{ width: "100%", height: 200 }} />
+    <ScrollView>
+    <View style={styles.container}>
+      <Image source={require("./assets/about.jpg")} style={{ width: "100%", height: 200 }} />
 
       <Text style={styles.heading}>Wollongong Botanic Garden</Text>
 
@@ -33,7 +34,7 @@ const About = () => {
       </Text>
 
       <Image source={require("./assets/garden3.png")} style={styles.image} />
-
+    </View>
     </ScrollView>
   );
 };
@@ -43,6 +44,13 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     backgroundColor: '#fff',
+  },
+  image: {
+    width: 400,
+    height: 200,
+    borderRadius: 10,
+    marginBottom: 10,
+    marginTop: 10,
   },
   heading: {
     fontSize: 24,
