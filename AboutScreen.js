@@ -9,8 +9,7 @@ const About = () => {
   return (
     <ScrollView>
     <View style={styles.container}>
-      <Image source={require("./assets/about.jpg")}  style={styles.image} />
-
+      <Image source={require("./assets/about.jpg")} style={styles.image} />
       <Text style={styles.text}>
         We officially opened to the public in January 1971. See our&nbsp;
         <Text style={styles.link} onPress={() => Linking.openURL('https://wollongongbotanicgarden.com.au/learn/history')}>History page</Text>          
@@ -25,9 +24,7 @@ const About = () => {
             }
           >
             ・Wollongong Botanic Garden and Gleniffer Brae Plan of Management PDF, 1871.19 KB
-          </Text>
-          {"\n"}
-          {"\n"}
+          </Text>{"\n"}{"\n"}
           <Text
             style={styles.link}
             onPress={() =>

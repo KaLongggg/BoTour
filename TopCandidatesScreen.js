@@ -27,9 +27,9 @@ const getProbabilityColor = (probability) => {
   } else if (probability >= 60) {
     return 'yellowgreen';
   } else if (probability >= 50) {
-    return 'yellow';
-  } else if (probability >= 40) {
     return 'gold';
+  } else if (probability >= 40) {
+    return 'goldenrod';
   } else if (probability >= 30) {
     return 'orange';
   } else if (probability >= 20) {
@@ -64,7 +64,7 @@ export default function TopCandidatesScreen({ route }) {
     >
       <Image source={getPlantImageURI(item.plantClass)} style={styles.smallPlantImage} />
       <View style={styles.textContainer}>
-        <Text style={styles.itemText}>{item.plantClass}:<Text
+        <Text style={styles.itemText}>{item.plantClass}: <Text
           style={[
             styles.itemText,
             { color: getProbabilityColor((item.probability * 100).toFixed(0)) },
