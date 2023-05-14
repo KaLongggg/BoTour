@@ -35,11 +35,11 @@ export default function MapScreen() {
   const y = location ? location.coords.latitude : null;
 
   //this only for test, you can chagne the longitude & latitude from google map to test
-   const { x: X, y: Y } = getImageCoordinates(150.875106, -34.409332) || { x: null, y: null };
+   //const { x: X, y: Y } = getImageCoordinates(150.875106, -34.409332) || { x: null, y: null };
    // this only for test, you can chagne the longitude & latitude from google map to test
 
   //this is the reall code, you require to deleted "//" when using the app
-  //const { x: X, y: Y } = x && y ? getImageCoordinates(x, y) : { x: null, y: null };
+  const { x: X, y: Y } = x && y ? getImageCoordinates(x, y) : { x: null, y: null };
   //this is the reall code
 
   const markerElements = MarkerData.map((marker, index) => {
