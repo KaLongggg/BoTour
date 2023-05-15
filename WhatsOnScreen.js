@@ -59,7 +59,9 @@ const gridImages = [
     // title: 'Spaces for Hire',
     //Create a page
     source: require('./assets/WhatsOn/SpacesForHire.jpg'),
-    onPress: (navigation) => navigation.navigate('SpacesForHire'),
+    onPress: () => {
+      Linking.openURL('https://wollongongbotanicgarden.com.au/events/spaces-for-hire');
+    },
   },
   {
     // title: 'News',

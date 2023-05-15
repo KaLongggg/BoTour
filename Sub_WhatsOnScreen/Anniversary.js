@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, Text, StyleSheet, ScrollView, Linking } from 'react-native';
+import { View, Image, Text, StyleSheet, ScrollView, Linking, Dimensions } from 'react-native';
 
 const Anniversary = () => {
 
@@ -52,11 +52,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   image: {
-    width: 400,
+    width: Dimensions.get('window').width,
     height: 200,
-    borderRadius: 20,
+    borderRadius: 0,
     marginBottom: 10,
-    marginTop: 10,
+    padding:20
   },
   title: {
     fontSize: 20,
