@@ -13,7 +13,6 @@ export default function Collection({ navigation }) {
         columnWrapperStyle={styles.row}
         ListHeaderComponent={
           <>
-            <Text style={styles.header}>My collections</Text>
             <Text style={styles.description}>Wollongong Botanic Garden has a range of varied collections, or groups of plants to explore.
                 Each collection includes plants that are either similar to each other, or would naturally live together in the ‘real’ world.
                 Pick a collection below to learn more, or use our garden map to explore it for yourself!</Text>
@@ -61,6 +60,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 20,
     padding: 10,
+    textAlign: "justify",
+    
   },
   link: {
     color: 'blue',
