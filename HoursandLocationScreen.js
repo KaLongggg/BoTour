@@ -19,20 +19,20 @@ const HoursAndLocation = () => {
 
       <Text>
         <View style={styles.tableRow}>
-          <Text style={styles.cellText}>Non-daylight saving hours{"\n"}From 2 April 2023</Text>
-          <Text style={styles.cellText}>7am to 5pm daily</Text>
+          <Text style={styles.cellText}>{"\n"}Non-daylight saving hours{"\n"}From 2 April 2023</Text>
+          <Text style={styles.cellText}>{"\n"}7am to 5pm daily</Text>
         </View>
         <View style={styles.tableRow}>
-          <Text style={styles.cellText}>Daylight saving hours{"\n"}From 1 October 2023</Text>
-          <Text style={styles.cellText}>7am to 6.45pm weekends{"\n"} and public holidays</Text>
-        </View>{"\n"}
+          <Text style={styles.cellText}>{"\n"}Daylight saving hours{"\n"}From 1 October 2023</Text>
+          <Text style={styles.cellText}>{"\n"}7am to 6.45pm weekends{"\n"} and public holidays</Text>
+        </View>{"\n"}{"\n"}
       </Text>
 
       <Text style={styles.heading}>Location</Text>
       <Text style={styles.text}>Set on 27 hectares at the foot of Mount Keira, Wollongong Botanic Garden is a short distance from the City Centre, and next to the University of Wollongong’s main campus. We are located approximately 85 kilometres south of Sydney.</Text>
       <Image
         style={styles.image}
-        source={require("./assets/locationMap.jpg")}
+        source={require("./assets/map1.png")}
       />
 
       <Text style={styles.heading}>Getting here</Text>
@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   image: {
-    width: 390,
-    height: 200,
+    width: 370,
+    height: 220,
     borderRadius: 10,
     marginBottom: 20,
     marginTop: 10,
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderBottomWidth: 1,
     borderBottomColor: 'black',
+    color: "#696969",
   },
   headerText: {
     fontSize: 16,
