@@ -171,8 +171,8 @@ const PlantSales = () => {
                     source={require('../assets/WhatsOn/PlantSales.jpg')}
                 />
                 <Text style={styles.text}>
-                    Make your garden greener by picking up some gems from our Nursery's Plant Sales.
-                    // your other content...
+                    Make your garden greener by picking up some gems from our Nursery's Plant Sales.{"\n"}
+                    
                 </Text>
                 <FlatList
                     data={data}
