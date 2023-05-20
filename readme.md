@@ -49,7 +49,7 @@ For detailed instructions, refer to the official Expo documentation: https://doc
 
 ## Screenshots
 
-![Home Page](\assets\Screenshot\h.jpg)
+![Home Page](/assets/Screenshot/h.jpg)
 
 ## Contact
 
