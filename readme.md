@@ -49,8 +49,29 @@ For detailed instructions, refer to the official Expo documentation: https://doc
 
 ## Screenshots
 
-<img src="/assets/Screenshot/h.jpg" width="600">
-<img src="/assets/Screenshot/Recog.jpg" width="600">
+- Home Page:
+  <img src="/assets/Screenshot/h.jpg" width="200">
+
+- Plant Recognizer
+  <img src="/assets/Screenshot/Recog.jpg" width="200">
+
+- Plant Information Page
+  <img src="/assets/Screenshot/PlantInfo.jpg" width="200">
+
+- Candidate Page
+  <img src="/assets/Screenshot/Candidate.jpg" width="200">
+
+- Map
+  <img src="/assets/Screenshot/Map.jpg" width="200">
+
+- Search
+  <img src="/assets/Screenshot/Search.jpg" width="200">
+
+- Favorite
+  <img src="/assets/Screenshot/Favourite.jpg" width="200">
+
+- What's On
+  <img src="/assets/Screenshot/WhatsOn.jpg" width="200">
 
 ## Contact
 
