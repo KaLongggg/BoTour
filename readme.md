@@ -22,7 +22,8 @@ The Plant Recognizer uses a TensorFlow.js model to identify plants from images c
 - The app then displays the identified plant species, its probability, and additional information.
 
 ## Map navigation
-The map navigation base on the core componets from React Native componets to design the map and using Expo third-party library to realize the the user location functionality. 
+
+The map navigation base on the core componets from React Native componets to design the map and using Expo third-party library to realize the the user location functionality.
 
 ### Implementation Details
 
@@ -32,23 +33,26 @@ The map navigation base on the core componets from React Native componets to des
 - The app then presents the user's location using a red droplet-shaped marker by utilizing the transformed data.
 
 ## “Expo go” Server Setup and App Testing Guide
+
 An instructions on how to start the server using the command "expo start" and how to test the app using the "expo go" tool.
+
 ### Starting the Server - expo start
+
 To start the server for your app, follow these steps:
 
 1.Make sure you have Expo CLI installed on your system. If not, you can install it by running the following command:
 
-**-  npm install -g expo-cli  -**
+**- npm install -g expo-cli -**
 
 2.Navigate to the root directory of your app using the command line.
 
 3.Run the following command to install the required dependencies:
 
-**-  npm install  -**
+**- npm install -**
 
 4.Once the dependencies are installed, you can start the server by running the following command:
 
-**-  expo start  -**
+**- expo start -**
 
 5.The Expo CLI will start building the JavaScript bundle and launch a Metro Bundler interface in your default web browser.
 
@@ -63,6 +67,7 @@ To start the server for your app, follow these steps:
 8.The app should now launch on your device or simulator/emulator, allowing you to test it.
 
 ### App Testing - expo go
+
 To test the app on a physical device using Expo Go, follow these steps:
 
 1.Install the Expo Go app from the App Store (iOS) or Google Play Store (Android) on your device.
