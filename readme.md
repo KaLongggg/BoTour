@@ -52,6 +52,9 @@ For detailed instructions, refer to the official Expo documentation: https://doc
 - Home Page:
   <img src="/assets/Screenshot/h.jpg" width="200">
 
+- Side Menu:
+  <img src="/assets/Screenshot/sm.jpg" width="200">
+
 - Plant Recognizer
   <img src="/assets/Screenshot/Recog.jpg" width="200">
 
@@ -65,7 +68,7 @@ For detailed instructions, refer to the official Expo documentation: https://doc
   <img src="/assets/Screenshot/Map.jpg" width="200">
 
 - Search
-  <img src="/assets/Screenshot/Search.jpg" width="200">
+  <img src="/assets/Screenshot/se.jpg" width="200">
 
 - Favorite
   <img src="/assets/Screenshot/Favourite.jpg" width="200">
@@ -75,6 +78,9 @@ For detailed instructions, refer to the official Expo documentation: https://doc
 
 ## Contact
 
-- Ka Long - kly958@uowmail.edu.au
-- Saya - sms595@uowmail.edu.au
-- Taobo - tf181@uowmail.edu.au
+| Name    | Email                 |
+| ------- | --------------------- |
+| Ka Long | kly958@uowmail.edu.au |
+| Saya    | sms595@uowmail.edu.au |
+| Taobo   | tf181@uowmail.edu.au  |
+| Xi      | xw776@uowmail.edu.au  |
