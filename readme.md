@@ -1,89 +1,58 @@
-# Wollongong Botanic Garden App
+# Wollongong Botanic Garden Mobile App
 
-This mobile app is designed to enhance the visitor experience at the Wollongong Botanic Garden. It offers several key features including plant recognition, map navigation, search functionality, and informative pages sourced from the official Wollongong Botanic Garden website.
+## Introduction
+
+The Wollongong Botanic Garden Mobile App aims to enrich the visitor's experience at Wollongong Botanic Garden. It is designed for those who have a keen interest in botany or those who want to enjoy a self-guided tour of the garden. With key features like plant recognition, map navigation, search functionality, and informative pages, this app serves as a handy guide.
 
 ## Features
 
-- Plant Recognizer: Identify plants by taking a photo, and receive detailed information about the plant species, including care instructions and interesting facts.
-- Map Function: Find your way around the garden with an interactive map that highlights points of interest and provides directions to specific locations.
-- Search Function: Quickly find information about plants, events, and other features within the garden.
-- Informative Pages: Learn more about the garden's history, conservation efforts, and upcoming events directly from the Wollongong Botanic Garden's official website.
+- **Plant Recognizer:** Snap a photo and identify various plant species with detailed information.
+- **Map Function:** Never get lost in the garden with an interactive map to guide you.
+- **Search Function:** Easily find plants, events, and features in the garden.
+- **Informative Pages:** Learn about the garden's history, conservation efforts, and upcoming events.
 
-## Plant Recognizer
+## Technology Stack
 
-The Plant Recognizer uses a TensorFlow.js model to identify plants from images captured by the user's device. The model has been trained on a dataset of thousands of images, allowing it to recognize various plant species with high accuracy.
+- `React Native`: The app was built using React Native due to its cross-platform capabilities and extensive support for TensorFlow, which was integral for the implementation of the plant recognizer feature.
+- `TensorFlow`: TensorFlow's comprehensive ecosystem of tools, libraries, and community resources were used to leverage machine learning for the plant recognizer feature.
+- `Expo Go`: A mobile client app used for testing and previewing the project in real time. Also, the Expo CLI was used for project initialization, app building, bundling, app publishing, and dependency management.
+- `React Navigation`: This was utilized for the app's navigation system, which included a bottom tab navigation system and a side menu.
+- `Convolutional Neural Network (CNN)`: A custom CNN model was created using TensorFlow and a customized training dataset to recognize specific plant species found in the Wollongong Botanic Garden.
+- `Python`: Used to train the CNN models with the custom dataset, where the Adam optimizer and categorical cross-entropy loss were used.
+- `TensorFlow.js`: The trained CNN models were converted into a format compatible with TensorFlow.js for real-time plant recognition within the app.
+- `React Native ImageBackground component`: Used for displaying a whole map picture in the map function.
+- `expo-location`: The library used to request the users' consent for sharing their location data with the app and retrieve the user's location information.
+- `React Native Marker component`: Built to represent an icon on the map, which displays relevant information about a plant collection when clicked.
+- `JavaScript .map() function`: Used to iterate over the MarkerData.js file and retrieve information about different plant collections.
+- `React useState() hook`: Utilized to manage the state of the user's search query in the search function.
+- `React Native Image, StyleSheet, and Linking libraries`: Used for the implementation of informational pages like “Home”, “About”, “Hours and Location”, and “What's On”. The Image library was used for rendering images, StyleSheet for applying custom styles, and Linking for handling internal and external links.
 
-### Implementation Details
+## Prerequisites
 
-- The React Native Camera component is used to capture images.
-- Images are resized and preprocessed using the `expo-image-manipulator` library.
-- The TensorFlow.js model is loaded into the app using the `@tensorflow/tfjs-react-native` library.
-- Predictions are made by running the captured image through the model and selecting the class with the highest probability.
-- The app then displays the identified plant species, its probability, and additional information.
+- Node.js & npm installed on your system
+- Expo CLI installed globally (`npm install -g expo-cli`)
 
-## Map navigation
+## Installation
 
-The map navigation base on the core componets from React Native componets to design the map and using Expo third-party library to realize the the user location functionality.
+Navigate to the root directory of the app, and run these commands:
 
-### Implementation Details
+1. `npm install`
+2. `expo start`
 
-- The MapScreen function requests the user's location and displays it on the botanic garden map.
-- The `expo-location library` is utilized to request and retrieve the user's location information.
-- The getImageCoordinates(x, y) function transforms real-world geographic coordinates into corresponding position data.
-- The app then presents the user's location using a red droplet-shaped marker by utilizing the transformed data.
+## App Testing - Expo Go
 
-## “Expo go” Server Setup and App Testing Guide
+1. Install Expo Go on your iOS or Android device.
+2. Connect your device to the same network as your development machine.
+3. Open Expo Go on your device and scan the QR code displayed in the Metro Bundler interface.
 
-An instructions on how to start the server using the command "expo start" and how to test the app using the "expo go" tool.
+For detailed instructions, refer to the official Expo documentation: https://docs.expo.dev/
 
-### Starting the Server - expo start
+## Screenshots
 
-To start the server for your app, follow these steps:
+![Home Page](\assets\Screenshot\h.jpg)
 
-1.Make sure you have Expo CLI installed on your system. If not, you can install it by running the following command:
+## Contact
 
-**- npm install -g expo-cli -**
-
-2.Navigate to the root directory of your app using the command line.
-
-3.Run the following command to install the required dependencies:
-
-**- npm install -**
-
-4.Once the dependencies are installed, you can start the server by running the following command:
-
-**- expo start -**
-
-5.The Expo CLI will start building the JavaScript bundle and launch a Metro Bundler interface in your default web browser.
-
-6.In the Metro Bundler interface, you'll see a QR code on the left side of the screen.
-
-7.You can now open the app on your device by using one of the following options:
-
-**[Physical Device:]** Install the Expo Go app from the App Store (iOS) or Google Play Store (Android) on your device. Then, scan the QR code using the Expo Go app.
-
-**[Simulator / Emulator:]** If you have a simulator/emulator set up, you can click on the appropriate option in the Metro Bundler interface to open the app.
-
-8.The app should now launch on your device or simulator/emulator, allowing you to test it.
-
-### App Testing - expo go
-
-To test the app on a physical device using Expo Go, follow these steps:
-
-1.Install the Expo Go app from the App Store (iOS) or Google Play Store (Android) on your device.
-
-2.Make sure your device is connected to the same network as the machine running the Expo server.
-
-3.Open the Expo Go app on your device.
-
-4.Tap on the Scan QR Code option within the Expo Go app.
-
-5.In the Metro Bundler interface on your computer (launched using "expo start"), you'll see a QR code on the left side of the screen.
-
-6.Scan the QR code using the Expo Go app on your device.
-
-7.The app should now launch on your device, allowing you to test it.
-
-Please note that in order to use Expo Go for testing, your machine running the Expo server and your device should be connected to the same network.
-
-For additional information on using Expo, refer to the official Expo documentation: https://docs.expo.dev/
+Ka Long - kly958@uowmail.edu.au
+Saya - sms595@uowmail.edu.au
+Taobo - tf181@uowmail.edu.au
