@@ -13,7 +13,7 @@ function SideMenu(props) {
         <DrawerItem
           icon={({ color, size }) => <Ionicons name="ios-home" size={30} color={color} />}
           label="Home"
-          onPress={() => props.navigation.navigate('Home')}
+          onPress={() => props.navigation.navigate('HomePage')}
           labelStyle={{ fontSize: 17 }}
         />
         <DrawerItem
@@ -99,5 +99,6 @@ function SideMenu(props) {
     </View>
   );
 }
+
 
 export default SideMenu;

@@ -193,10 +193,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   image: {
-    width: 400,
-    height: 200,
+    width: 370,
+    height: 220,
     borderRadius: 10,
-    marginBottom: 10,
+    marginBottom: 20,
     marginTop: 10,
   },
   title: {

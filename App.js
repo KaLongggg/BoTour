@@ -62,7 +62,7 @@ function MainStackNavigator() {
     >
       
       <Stack.Screen name="Main" component={BottomTabNavigator} options={{ headerShown: false }}/>
-      <Stack.Screen name="HomePage" component={HomePage} />
+      <Stack.Screen name="HomePage" component={HomePage} options={{ headerShown: false }}/>
       <Stack.Screen name="What's On?" component={WhatsOnScreen} options={{ title: "What's On"}} />
       <Stack.Screen name="Collection" component={CollectionScreen} />
       <Stack.Screen name="Tours" component={ToursScreen} />

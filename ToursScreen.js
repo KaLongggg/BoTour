@@ -4,7 +4,16 @@ import { ScrollView, View, Text, Image, StyleSheet, Dimensions } from 'react-nat
 const TourScreen = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.header}>Tours and Workshops</Text>
+    <Image
+      style={{
+        width: 370,
+        height: 220,
+        borderRadius: 10,
+        marginBottom: 20,
+        marginTop: 10,
+      }}
+      source={require("./assets/tours.jpg")}
+    />
       <Text style={styles.description}>
         Get to know Wollongong Botanic Garden better by taking a tour or walk with us. 
         We regularly hold tours at our main Garden, as well as the other natural sites we manage. 
@@ -37,8 +46,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   description: {
+    marginTop: 20,
     fontSize: 16,
     marginBottom: 20,
+    textAlign: "justify",
   },
   subHeader: {
     fontSize: 20,
