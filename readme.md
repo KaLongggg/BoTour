@@ -20,3 +20,14 @@ The Plant Recognizer uses a TensorFlow.js model to identify plants from images c
 - The TensorFlow.js model is loaded into the app using the `@tensorflow/tfjs-react-native` library.
 - Predictions are made by running the captured image through the model and selecting the class with the highest probability.
 - The app then displays the identified plant species, its probability, and additional information.
+
+## Map navigation
+The map navigation base on the core componets from React Native componets to design the map and using Expo third-party library to realize the the user location functionality. 
+
+### Implementation Details
+
+- The MapScreen function requests the user's location and displays it on the botanic garden map.
+- The expo-location library is utilized to request and retrieve the user's location information.
+- The getImageCoordinates(x, y) function transforms real-world geographic coordinates into corresponding position data.
+- The app then presents the user's location using a red droplet-shaped marker by utilizing the transformed data.
+
