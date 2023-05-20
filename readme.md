@@ -27,7 +27,7 @@ The map navigation base on the core componets from React Native componets to des
 ### Implementation Details
 
 - The MapScreen function requests the user's location and displays it on the botanic garden map.
-- The expo-location library is utilized to request and retrieve the user's location information.
+- The `expo-location library` is utilized to request and retrieve the user's location information.
 - The getImageCoordinates(x, y) function transforms real-world geographic coordinates into corresponding position data.
 - The app then presents the user's location using a red droplet-shaped marker by utilizing the transformed data.
 
