@@ -8,8 +8,8 @@ The Wollongong Botanic Garden Mobile App, BoTour, aims to enrich the visitor's e
 
 - **Plant Recognizer:** Snap a photo and identify various plant species with detailed information.
 - **Map Function:** Never get lost in the garden with an interactive map to guide you.
-- **Search Function:** Easily find plants, events, and features in the garden.
-- **Informative Pages:** Learn about the garden's history, conservation efforts, and upcoming events.
+- **Search Function:** Easily search for collections, events, and facilities in the garden.
+- **Informative Pages:** Learn about the garden's history, collection, and upcoming events.
 
 ## Technology Stack
 
@@ -87,11 +87,11 @@ For detailed instructions, refer to the official Expo documentation: https://doc
 
 ## Contact
 
-| Name    | Email                 |
-| ------- | --------------------- |
-| Ka Long | kly958@uowmail.edu.au |
-| Saya    | sm595@uowmail.edu.au  |
-| Taobo   | tf181@uowmail.edu.au  |
-| Xi      | xw776@uowmail.edu.au  |
-| Suna    | sw018@uowmail.edu.au  |
-| Zhixing | zz467@uowmail.edu.au  |
+| Name     | Email                 |
+| -------- | --------------------- |
+| Ka Long  | kly958@uowmail.edu.au |
+| Saya     | sm595@uowmail.edu.au  |
+| Taobo    | tf181@uowmail.edu.au  |
+| Xi       | xw776@uowmail.edu.au  |
+| Suna     | sw018@uowmail.edu.au  |
+| Zhi Xing | zz467@uowmail.edu.au  |
