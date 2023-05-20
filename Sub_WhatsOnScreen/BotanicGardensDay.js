@@ -59,7 +59,9 @@ const BotanicGardensDay = () => {
     );
 
   return (
-    <ScrollView>
+    <FlatList
+            ListHeaderComponent={
+              <>
       <View style={styles.container}>
         <Image
           style={styles.image}
@@ -85,13 +87,14 @@ const BotanicGardensDay = () => {
             &nbsp;</Text>               
             for event updates and other plant power videos from our staff.{'\n'}{'\n'}
         </Text>
-        <FlatList
+        </View>
+        </>
+        }
+
             data={data}
             renderItem={renderItem}
             keyExtractor={item => item.title}
         />
-      </View>
-      </ScrollView>
   );
 }
 
@@ -100,7 +103,7 @@ const BotanicGardensDay = () => {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     paddingVertical: 20,
   },
   image: {
@@ -131,7 +134,7 @@ const styles = StyleSheet.create({
     borderBottomColor: 'black',
     paddingBottom: 5,
     marginBottom: 5,
-    backgroundColor: '#f2f0f0',
+    backgroundColor: '#ffffff',
     width: 360,
     textAlign: 'center',
   },
