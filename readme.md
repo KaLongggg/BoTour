@@ -50,30 +50,39 @@ For detailed instructions, refer to the official Expo documentation: https://doc
 ## Screenshots
 
 - Home Page:
+  <br/>
   <img src="/assets/Screenshot/h.jpg" width="200">
 
 - Side Menu:
+  <br/>
   <img src="/assets/Screenshot/sm.jpg" width="200">
 
 - Plant Recognizer
+  <br/>
   <img src="/assets/Screenshot/Recog.jpg" width="200">
 
 - Plant Information Page
+  <br/>
   <img src="/assets/Screenshot/PlantInfo.jpg" width="200">
 
 - Candidate Page
+  <br/>
   <img src="/assets/Screenshot/Candidate.jpg" width="200">
 
 - Map
+  <br/>
   <img src="/assets/Screenshot/Map.jpg" width="200">
 
 - Search
+  <br/>
   <img src="/assets/Screenshot/se.jpg" width="200">
 
 - Favorite
+  <br/>
   <img src="/assets/Screenshot/Favourite.jpg" width="200">
 
 - What's On
+  <br/>
   <img src="/assets/Screenshot/WhatsOn.jpg" width="200">
 
 ## Contact
