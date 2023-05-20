@@ -49,8 +49,8 @@ For detailed instructions, refer to the official Expo documentation: https://doc
 
 ## Screenshots
 
-![Home Page](/assets/Screenshot/h.jpg)
-![Plant Recognizer](/assets/Screenshot/Recog.jpg)
+<img src="/assets/Screenshot/h.jpg" width="600">
+<img src="/assets/Screenshot/Recog.jpg" width="600">
 
 ## Contact
 
