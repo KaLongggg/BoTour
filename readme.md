@@ -1,8 +1,8 @@
-# Wollongong Botanic Garden Mobile App
+# Wollongong Botanic Garden Mobile App - BoTour
 
 ## Introduction
 
-The Wollongong Botanic Garden Mobile App aims to enrich the visitor's experience at Wollongong Botanic Garden. It is designed for those who have a keen interest in botany or those who want to enjoy a self-guided tour of the garden. With key features like plant recognition, map navigation, search functionality, and informative pages, this app serves as a handy guide.
+The Wollongong Botanic Garden Mobile App, BoTour, aims to enrich the visitor's experience at Wollongong Botanic Garden. It is designed for those who have a keen interest in botany or those who want to enjoy a self-guided tour of the garden. With key features like plant recognition, map navigation, search functionality, and informative pages, this app serves as a handy guide on both iOS and Android devices.
 
 ## Features
 
