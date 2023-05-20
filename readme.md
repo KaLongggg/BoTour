@@ -87,9 +87,11 @@ For detailed instructions, refer to the official Expo documentation: https://doc
 
 ## Contact
 
-| Name    | Email                 |
-| ------- | --------------------- |
-| Ka Long | kly958@uowmail.edu.au |
-| Saya    | sms595@uowmail.edu.au |
-| Taobo   | tf181@uowmail.edu.au  |
-| Xi      | xw776@uowmail.edu.au  |
+| Name     | Email                 |
+| -------- | --------------------- |
+| Ka Long  | kly958@uowmail.edu.au |
+| Saya     | sms595@uowmail.edu.au |
+| Taobo    | tf181@uowmail.edu.au  |
+| Xi       | xw776@uowmail.edu.au  |
+| Suna     | sw018@uowmail.edu.au  |
+| Zhi Xing | zz467@uowmail.edu.au  |
