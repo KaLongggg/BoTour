@@ -53,7 +53,7 @@ For detailed instructions, refer to the official Expo documentation: https://doc
   <br/>
   <img src="/assets/Screenshot/h.jpg" width="200">
 
-- Side Menu:
+- Sidebar Menu:
   <br/>
   <img src="/assets/Screenshot/sm.jpg" width="200">
 
@@ -90,6 +90,8 @@ For detailed instructions, refer to the official Expo documentation: https://doc
 | Name    | Email                 |
 | ------- | --------------------- |
 | Ka Long | kly958@uowmail.edu.au |
-| Saya    | sms595@uowmail.edu.au |
+| Saya    | sm595@uowmail.edu.au  |
 | Taobo   | tf181@uowmail.edu.au  |
 | Xi      | xw776@uowmail.edu.au  |
+| Suna    | sw018@uowmail.edu.au  |
+| Zhixing | zz467@uowmail.edu.au  |
