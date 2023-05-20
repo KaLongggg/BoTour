@@ -8,7 +8,7 @@ The Wollongong Botanic Garden Mobile App, BoTour, aims to enrich the visitor's e
 
 - **Plant Recognizer:** Snap a photo and identify various plant species with detailed information.
 - **Map Function:** Never get lost in the garden with an interactive map to guide you.
-- **Search Function:** Easily find plants, events, and features in the garden.
+- **Search Function:** Easily search for collections, events, and facilities in the garden.
 - **Informative Pages:** Learn about the garden's history, collection, and upcoming events.
 
 ## Technology Stack
