@@ -50,9 +50,10 @@ For detailed instructions, refer to the official Expo documentation: https://doc
 ## Screenshots
 
 ![Home Page](/assets/Screenshot/h.jpg)
+![Plant Recognizer](/assets/Screenshot/Recog.jpg)
 
 ## Contact
 
-Ka Long - kly958@uowmail.edu.au
-Saya - sms595@uowmail.edu.au
-Taobo - tf181@uowmail.edu.au
+- Ka Long - kly958@uowmail.edu.au
+- Saya - sms595@uowmail.edu.au
+- Taobo - tf181@uowmail.edu.au
