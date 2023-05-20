@@ -21,7 +21,7 @@ const Accordion = ({ title, children }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     marginBottom: 20,
     borderRadius: 5,
     overflow: 'hidden',
