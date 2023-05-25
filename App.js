@@ -8,6 +8,8 @@ import { createDrawerNavigator, DrawerContentScrollView } from '@react-navigatio
 import { Ionicons } from '@expo/vector-icons';
 import * as tf from '@tensorflow/tfjs-react-native';
 import { View } from 'react-native';
+import { LogBox } from 'react-native';
+
 
 
 // Import screens here
@@ -28,6 +30,10 @@ import Anniversary from './Sub_WhatsOnScreen/Anniversary';
 import PlantInfoScreen from './PlantInfoScreen';
 import TopCandidatesScreen from './TopCandidatesScreen';
 import CapturedImage from './CapturedImage';
+
+
+LogBox.ignoreLogs(['Warning: ...']);   // Ignore log notification by message
+LogBox.ignoreAllLogs(); //Ignore all log notifications
 
 const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
