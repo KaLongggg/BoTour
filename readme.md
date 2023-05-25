@@ -27,6 +27,14 @@ The Wollongong Botanic Garden Mobile App, BoTour, aims to enrich the visitor's e
 - `React useState() hook`: Utilized to manage the state of the user's search query in the search function.
 - `React Native Image, StyleSheet, and Linking libraries`: Used for the implementation of informational pages like “Home”, “About”, “Hours and Location”, and “What's On”. The Image library was used for rendering images, StyleSheet for applying custom styles, and Linking for handling internal and external links.
 
+## Plant Recognizer
+
+Our Plant Recognizer is a key feature of the BoTour app, allowing users to instantly identify plants by taking or uploading a photo from their device. Utilizing the power of machine learning, this feature aids in enhancing the user's understanding and experience of the Wollongong Botanic Garden.
+
+Under the hood, the Plant Recognizer leverages a pre-trained TensorFlow MobileNet v2 model for plant identification. This model, trained on a comprehensive dataset of diverse plant species, recognizes and distinguishes between different plants with a high degree of accuracy.
+
+This efficient AI-powered recognition process not only educates the user about the diverse flora around them but also adds a layer of interactive engagement to their Botanic Garden visit.
+
 ## Prerequisites
 
 - Node.js & npm installed on your system
