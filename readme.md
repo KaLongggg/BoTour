@@ -97,7 +97,7 @@ For detailed instructions, refer to the official Expo documentation: https://doc
 
 | Name     | Email                 |
 | -------- | --------------------- |
-| Ka Long  | kly958@uowmail.edu.au |
+| Ka Long (Group Leader)  | kly958@uowmail.edu.au |
 | Saya     | sm595@uowmail.edu.au  |
 | Taobo    | tf181@uowmail.edu.au  |
 | Xi       | xw776@uowmail.edu.au  |
